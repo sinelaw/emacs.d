@@ -28,11 +28,8 @@
 (require 'anything)
 (require 'auto-install)
 
+(require 'etags-table)
+(setq etags-table-search-up-depth 10)
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
-
-
-; (require 'position-stack)
-; (require 'p4)
-;; (require 'cscope)
-;; (require 'cscope-ext)
