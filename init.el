@@ -38,6 +38,7 @@
 (require 'cl-lib)
 (require 'comint)
 (require 'python)
+(require 'hexl)
 (require 'key-bindings)
 
 (server-start)
@@ -99,8 +100,8 @@
   (interactive "sDirectory component name: \n")
   (let*
       ((postfix
-        (car (sane-match (concat ".*/" component-name "/\\(.*\\)/") default-directory '(1))))
+        (car (sane-match (concat ".*/" component-name "/\\(.*\\)") default-directory '(1))))
        (escape-path (replace-regexp-in-string "[^/]+" ".." postfix))
        (sym (if (eq nil to-find) (thing-at-point 'symbol) to-find))
-       (cmd (concat "find " escape-path (if (eq nil find-args) "" (concat " \\( " find-args " \\)")) " -type f -print0 | xargs -0 grep --color=never -n " sym)))
+       (cmd (concat "find " escape-path "*" (if (eq nil find-args) "" (concat " \\( " find-args " \\)")) " -type f -print0 | xargs -0 grep --color=never -n " sym)))
     (grep-find cmd)))

@@ -51,10 +51,15 @@
 (global-set-key [(meta ?\]) ?a ?j] 'aosp-grep-java)
 (global-set-key [(meta ?\]) ?A ?j] 'aosp-grep-java-str)
 
+(defun bluetooth-wrap-grep-all () (interactive) (project-wide-grep "bluetooth_wrap"))
+(global-set-key [(meta ?\]) ?w] 'bluetooth-wrap-grep-all)
+
 (defun ghc-grep-all      ()    (interactive) (project-wide-grep "ghc"))
 (global-set-key [(meta ?\]) ?g ?a] 'ghc-grep-all)
 
 (defun lamdu-grep-all    ()    (interactive) (project-wide-grep "lamdu"))
 (global-set-key [(meta ?\]) ?l] 'lamdu-grep-all)
+
+(define-key hexl-mode-map [(control b)] 'switch-to-buffer)
 
 (provide 'key-bindings)
