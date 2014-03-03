@@ -34,8 +34,6 @@
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
  '(make-backup-files nil)
- '(shm-use-hdevtools t)
- '(shm-use-presentation-mode t)
  '(show-paren-mode t)
  '(show-paren-style (quote expression))
  '(standard-indent 8))

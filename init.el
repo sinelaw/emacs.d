@@ -21,9 +21,6 @@
 (add-to-list 'load-path "~/.emacs.d/emacs-grep-a-lot")
 (require 'grep-a-lot)
 
-(add-to-list 'load-path "~/.emacs.d/structured-haskell-mode/elisp")
-(require 'shm)
-
 (add-to-list 'load-path "~/.emacs.d/haskell-mode")
 (require 'chris-doner)
 
