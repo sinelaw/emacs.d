@@ -6,6 +6,7 @@
 (require 'custom-el)
 
 (add-to-list 'load-path "~/.emacs.d/magit")
+(add-to-list 'load-path "~/.emacs.d/git-modes")
 
 (delete-selection-mode)
 
@@ -15,14 +16,12 @@
 
 (require 'etags-table)
 
+(require 'haskell-mode)
 (add-to-list 'auto-mode-alist '("\\.hs" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.lhs" . haskell-mode))
 
 (add-to-list 'load-path "~/.emacs.d/emacs-grep-a-lot")
 (require 'grep-a-lot)
-
-(add-to-list 'load-path "~/.emacs.d/haskell-mode")
-(require 'chris-doner)
 
 (require 'cc-mode)
 
@@ -40,7 +39,7 @@
 
 (require 'c-functions)
 (require 'magit)
-(require 'rebase-mode)
+(require 'git-rebase-mode)
 (require 'cl-lib)
 (require 'comint)
 (require 'python)
