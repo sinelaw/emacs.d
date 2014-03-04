@@ -63,8 +63,8 @@
 (defun llvm-grep-all () (interactive) (project-wide-grep "llvm"))
 (global-set-key [(meta ?\]) ?v] 'llvm-grep-all)
 
-(defun ekiga-grep-all () (interactive) (project-wide-grep "ekiga"))
-(global-set-key [(meta ?\]) ?e] 'ekiga-grep-all)
+(defun elfs-grep-all () (interactive) (project-wide-grep "elfs"))
+(global-set-key [(meta ?\]) ?e] 'elfs-grep-all)
 
 (defun bluetooth-wrap-grep-all () (interactive) (project-wide-grep "bluetooth_wrap"))
 (global-set-key [(meta ?\]) ?w] 'bluetooth-wrap-grep-all)
