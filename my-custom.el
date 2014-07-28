@@ -51,6 +51,7 @@
  '(default ((t (:stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 125 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(diff-added ((t (:inherit diff-changed :foreground "green"))))
  '(diff-removed ((t (:inherit diff-changed :foreground "red"))))
+ '(flymake-errline ((t (:inherit nil :background "red4"))))
  '(flymake-warnline ((((class color) (background dark)) (:background "#555500"))))
  '(font-lock-builtin-face ((((class color) (min-colors 88) (background dark)) (:foreground "red2"))))
  '(font-lock-comment-delimiter-face ((default (:inherit font-lock-comment-face)) (((class color) (min-colors 16)) nil)))
