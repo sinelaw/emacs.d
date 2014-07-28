@@ -1,8 +1,8 @@
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(c-basic-offset 8)
  '(c-macro-prompt-flag t)
  '(dabbrev-case-distinction t)
@@ -10,6 +10,10 @@
  '(dired-recursive-copies (quote always))
  '(dired-recursive-deletes (quote top))
  '(enable-recursive-minibuffers t)
+ '(flymake-gui-warnings-enabled nil)
+ '(global-whitespace-mode t)
+ '(haskell-indent-spaces 4)
+ '(haskell-mode-hook (quote (turn-on-haskell-indentation)))
  '(ido-auto-merge-delay-time 60)
  '(ido-create-new-buffer (quote prompt))
  '(ido-enabled nil t)
@@ -27,11 +31,11 @@
  '(isearch-lazy-highlight t)
  '(lazy-highlight-initial-delay 0)
  '(p4-use-p4config-exclusively t)
- '(pc-selection-mode t nil (pc-select))
+ '(rtags-completions-enabled t)
  '(safe-local-variable-values (quote ((test-case-name . invective\.test) (haskell-hugs-program-args "+." "-98") (test-case-name . "nevow.test.test_url") (test-case-name . nevow\.test) (test-case-name . formless\.test\.test_freeform) (test-case-name . twisted\.names\.test\.test_dns) (test-case-name . twisted\.test\.test_context) (test-case-name . twisted\.mail\.test\.test_imap) (test-case-name . twisted\.conch\.test\.test_conch) (test-case-name . twisted\.test\.test_protocols) (test-case-name . combinator\.test\.test_sysenv) (test-case-name . twisted\.conch\.test\.test_filetransfer) (test-case-name . twisted\.trial\.test\.test_script) (test-case-name . twisted\.test\.test_application) (test-case-name . twisted\.test\.test_amp) (test-case-name . twisted\.mail\.test\.test_mail) (test-case-name . twisted\.test\.test_iutils) (test-case-name . twisted\.conch\.test\.test_recvline) (test-case-name . twisted\.trial\.test\.test_util) (test-case-name . twisted\.test\.test_reflect) (test-case-name . twisted\.conch\.test\.test_manhole) (test-case-name . twisted\.trial\.test\.test_runner) (test-case-name . twisted\.trial\.test\.test_tests) (test-case-name . twisted\.test\.test_modules) (test-case-name . twisted\.test\.test_banana) (test-case-name . twisted\.test\.test_jelly) (test-case-name . twisted\.test\.test_abstract) (test-case-name . combinator) (test-case-name . twisted\.test\.test_logfile) (test-case-name . twisted\.test\.test_udp) (test-case-name . twisted\.conch\.test\.test_insults) (test-case-name . twisted\.test\.test_threadpool) (test-case-name . twisted\.test\.test_task) (test-case-name . twisted\.test\.test_log) (test-case-name . twisted\.test\.test_spread) (test-case-name . twisted\.test\.test_failure) (test-case-name . twisted\.test\.test_components) (test-case-name . twisted\.test\.test_loopback) (test-case-name . twisted\.test\.test_tcp) (test-case-name . twisted\.test\.test_ftp) (test-case-name . twisted\.test\.test_defer) (test-case-name . twisted\.web\.test\.test_http) (test-case-name . twisted\.test\.test_stdio\.StandardInputOutputTestCase\.testProducer) (test-case-name . twisted\.test\.test_factories) (test-case-name . twisted\.test\.test_process) (test-case-name . twisted\.python\.threadable) (test-case-name . twisted\.test\.test_persisted) (test-case-name . twisted\.test\.test_paths) (test-case-name . twisted\.web\.test\.test_web) (test-case-name . twisted\.test\.test_internet))))
  '(shell-input-autoexpand t)
  '(show-paren-style (quote expression))
- '(show-trailing-whitespace nil)
+ '(show-trailing-whitespace t)
  '(twisted-dev-confirm-run-all t)
  '(twisted-dev-directory "~/devel/packages/divmod/svn/twisted/trunk/")
  '(twisted-dev-scratch-directory "~/devel/scratch/test")
@@ -40,13 +44,14 @@
  '(uniquify-strip-common-suffix nil)
  '(version-control (quote never)))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(default ((t (:stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 125 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(diff-added ((t (:inherit diff-changed :foreground "green"))))
  '(diff-removed ((t (:inherit diff-changed :foreground "red"))))
+ '(flymake-warnline ((((class color) (background dark)) (:background "#555500"))))
  '(font-lock-builtin-face ((((class color) (min-colors 88) (background dark)) (:foreground "red2"))))
  '(font-lock-comment-delimiter-face ((default (:inherit font-lock-comment-face)) (((class color) (min-colors 16)) nil)))
  '(font-lock-comment-face ((((class color) (min-colors 88) (background dark)) (:foreground "grey"))))
@@ -59,7 +64,7 @@
  '(ido-only-match ((((class color)) (:background "darkgreen" :foreground "white"))))
  '(mode-line ((((class color) (min-colors 88)) (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(mode-line-inactive ((default (:inherit mode-line :slant italic)) (((class color) (min-colors 88) (background dark)) (:background "grey20" :foreground "grey80" :box (:line-width -1 :color "grey40") :weight light))))
- '(py-builtins-face ((t (:foreground "#FF6600"))) t)
+ '(py-builtins-face ((t (:foreground "#FF6600"))))
  '(show-paren-match ((((class color) (background dark)) (:background "#332266")))))
 
 (provide 'my-custom)

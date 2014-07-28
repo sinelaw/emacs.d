@@ -12,13 +12,23 @@
 
 (setenv "TERM" "emacs")
 
+(server-start)
+(setenv "EDITOR" "emacsclient")
+(setenv "PAGER" "")
+
 (setq compile-history
       '("make -k"))
+(setq grep-find-command "git grep --no-color -n -e ")
 (setq grep-find-history '("find . -type f -name \"*.[ch]\" -print0 | xargs -0 -e grep -nH -e "))
 
-(defcustom xiv-system "qa12" "The system with which to work" :type 'string)
+(setenv "PATH" (concat (getenv "HOME") "/.cabal/bin" ":" (getenv "PATH")))
 
-(server-start)
+(defun set-term ()
+  (insert "export TERM=vt100")
+  (comint-send-input))
+(add-hook 'shell-mode-hook 'set-term)
+
+(defcustom xiv-system "qa12" "The system with which to work" :type 'string)
 
 (setq process-coding-system-alist '(("" . "unix")))
 

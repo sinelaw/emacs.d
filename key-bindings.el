@@ -17,7 +17,9 @@
 
 (global-set-key [(control x) (shift v) (shift k)] 'dvc-kill-all-buffers)
 
-(global-set-key [(alt i) ?s] 'ispell-comments-and-strings)
+(global-set-key [(control shift ?s)] 'sort-lines)
+
+;(global-set-key [(meta ?i) ?s] 'ispell-comments-and-strings)
 
 (require 'ido)
 (let ((ido-mode-map (cdr ido-minor-mode-map-entry)))
@@ -27,8 +29,8 @@
 (define-key comint-mode-map [(control up)] 'comint-previous-matching-input-from-input)
 (define-key comint-mode-map [(control down)] 'comint-next-matching-input-from-input)
 
-(global-set-key [(control alt r)] 'isearch-backward-regexp)
-(global-set-key [(control alt s)] 'isearch-forward-regexp)
+(global-set-key [(control meta r)] 'isearch-backward-regexp)
+(global-set-key [(control meta s)] 'isearch-forward-regexp)
 
 (require 'cc-mode)
 (require 'python-mode)
@@ -42,10 +44,13 @@
 (global-set-key [(shift delete)] 'clipboard-kill-region)
 (global-set-key [(shift insert)] 'clipboard-yank)
 
-(global-set-key [(alt left)] 'backward-sexp)
-(global-set-key [(alt shift left)] 'backward-sexp-mark)
-(global-set-key [(alt right)] 'forward-sexp)
-(global-set-key [(alt shift right)] 'forward-sexp-mark)
+(global-set-key [(meta left)] 'backward-sexp)
+;; (global-set-key [(meta shift left)] 'backward-sexp-mark)
+(global-set-key [(meta right)] 'forward-sexp)
+;; (global-set-key [(meta shift right)] 'forward-sexp-mark)
+
+(global-set-key [(meta super right)] 'my-indent-region)
+(global-set-key [(meta super left)] 'my-unindent-region)
 
 (global-set-key [(control tab)] 'other-window)
 (define-key (cdr ido-minor-mode-map-entry) [(control tab)] 'other-window)
@@ -53,12 +58,13 @@
 (global-set-key [(control h) (control v)] 'customize-variable)
 
 (global-set-key [(control z)] 'undo)
+(global-set-key [(control shift z)] 'redo)
 
-(global-set-key [(alt up)] (defun scroll-down-one () (interactive) (scroll-down 1)))
-(global-set-key [(alt down)] (defun scroll-up-one () (interactive) (scroll-up 1)))
+(global-set-key [(meta up)] (defun scroll-down-one () (interactive) (scroll-down 1)))
+(global-set-key [(meta down)] (defun scroll-up-one () (interactive) (scroll-up 1)))
 
-(global-set-key [(alt ?3)] 'comment-region)
-(global-set-key [(alt ?4)] (defun uncomment-region () (interactive)
+(global-set-key [(meta ?3)] 'comment-region)
+(global-set-key [(meta ?4)] (defun uncomment-region () (interactive)
 			     (comment-region
 			      (region-beginning)
 			      (region-end)
@@ -73,7 +79,7 @@
 (global-set-key [(control x) (control c)] (defun print-message-about-exit () (interactive) (message "Use Control-x c!")))
 
 (global-set-key [f4] 'next-error)
-(global-set-key [(alt f4)] 'previous-error)
+(global-set-key [(meta f4)] 'previous-error)
 (global-set-key [(shift f4)] 'previous-error)
 
 (global-unset-key [f6])
@@ -95,6 +101,7 @@
 (global-set-key [f5] 'delete-other-windows)
 
 (global-set-key [(control f9)] 'grep-find)
+(global-set-key [(shift f9)] 'grep-find)
 
 (global-set-key [f9] 'compile)
 (global-set-key [f1] 'manual-entry)
@@ -110,11 +117,26 @@
 (global-set-key [(control c) (control f3)] 'c-make-module)
 
 (global-set-key [(control c) h t] 'tags-ext-make-tags)
-(global-set-key [(alt ?.)] 'tags-ext-find-tag-at-point)
+(global-set-key [(meta ?.)] 'tags-ext-find-tag-at-point)
 
-(global-set-key [(control alt f)] 'find-function)
-(global-set-key [(control x) (control alt f)] 'find-function-on-key)
+(global-set-key [(control meta f)] 'find-function)
+(global-set-key [(control x) (control meta f)] 'find-function-on-key)
 
 (global-set-key [(control ? )] 'anything)
+
+(global-set-key [f5] 'flymake-compile)
+(global-set-key [f6] 'flymake-display-err-menu-for-current-line)
+
+(defun add-review-comment ()
+  (interactive)
+  (insert (concat comment-start "REVIEW(Eyal): "))
+  (save-excursion (insert comment-end)))
+(global-set-key [(meta shift ?r)] 'add-review-comment)
+
+(defun add-response-comment ()
+  (interactive)
+  (insert (concat comment-start "Eyal: "))
+  (save-excursion (insert comment-end)))
+(global-set-key [(meta shift ?w)] 'add-response-comment)
 
 (provide 'key-bindings)
