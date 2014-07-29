@@ -7,8 +7,8 @@
                                     (or header-name (os-basename (buffer-file-name))))))
     (save-excursion
       (beginning-of-buffer)
-      (insert "#ifndef __" protector-name "_\n"
-              "#define __" protector-name "_\n\n")
+      (insert "#ifndef __" (upcase protector-name) "_\n"
+              "#define __" (upcase protector-name) "_\n\n")
       (end-of-buffer)
       (insert "\n#endif\n"))))
 

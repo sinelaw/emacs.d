@@ -9,6 +9,9 @@
 ;(add-to-list 'load-path "~/.emacs.d/twisted")
 (setq custom-file "~/.emacs.d/my-custom.el")
 
+(setq compile-command "buildsome -C --disable-color -j8")
+(setq compile-history (list "cabal build" "cabal install" "make"))
+
 ;; TODO: add the ido find -name/-iname fix for wide-find-file
 
 (add-to-list 'load-path "~/.emacs.d/git-modes")
@@ -56,3 +59,4 @@
 (put 'downcase-region 'disabled nil)
 
 (delete-selection-mode t)
+(global-auto-revert-mode 1)

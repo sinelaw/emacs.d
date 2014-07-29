@@ -5,8 +5,6 @@
 (require 'shell)
 (define-key shell-mode-map [(shift return)] 'shell-resync-dirs)
 
-(global-set-key [f6] 'switch-to-other-buffer)
-
 (global-set-key [(control f4)] 'bury-buffer)
 (global-set-key [pause] 'kill-this-buffer)
 
@@ -82,7 +80,6 @@
 (global-set-key [(meta f4)] 'previous-error)
 (global-set-key [(shift f4)] 'previous-error)
 
-(global-unset-key [f6])
 
 ;(global-set-key [(control next)] 'position-stack-push)
 ;(global-set-key [(control prior)] 'position-stack-pop)
@@ -125,7 +122,9 @@
 (global-set-key [(control ? )] 'anything)
 
 (global-set-key [f5] 'flymake-compile)
-(global-set-key [f6] 'flymake-display-err-menu-for-current-line)
+;(global-unset-key [f6])
+(global-set-key [(shift f6)] 'flymake-display-err-menu-for-current-line)
+(global-set-key [f6] 'flymake-goto-next-error)
 
 (defun add-review-comment ()
   (interactive)

@@ -26,7 +26,6 @@
  '(ido-max-work-directory-list 30)
  '(ido-max-work-file-list 50)
  '(ido-mode (quote both) nil (ido))
- '(ido-use-filename-at-point (quote guess))
  '(indent-tabs-mode t)
  '(isearch-lazy-highlight t)
  '(lazy-highlight-initial-delay 0)
@@ -42,7 +41,8 @@
  '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(uniquify-separator "/")
  '(uniquify-strip-common-suffix nil)
- '(version-control (quote never)))
+ '(version-control (quote never))
+ '(whitespace-style (quote (trailing tab-mark))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
