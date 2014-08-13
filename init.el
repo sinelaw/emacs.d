@@ -10,7 +10,7 @@
 (setq custom-file "~/.emacs.d/my-custom.el")
 
 (setq compile-command "buildsome -C --disable-color -j8")
-(setq compile-history (list "cabal build" "cabal install" "make"))
+(setq compile-history (list "buildsome -C --disable-color -j8" "cabal build" "cabal install" "make"))
 
 ;; TODO: add the ido find -name/-iname fix for wide-find-file
 
@@ -52,6 +52,7 @@
 (setq etags-table-search-up-depth 10)
 
 (require 'rtags)
+(rtags-start-process-maybe)
 (rtags-enable-standard-keybindings nil "\M-[")
 (define-key c-mode-base-map [(meta ?.)] 'rtags-find-symbol-at-point)
 

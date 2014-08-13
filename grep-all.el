@@ -47,8 +47,8 @@
 (defun elfs-grep-all () (interactive) (project-wide-grep "elfs"))
 (global-set-key [(meta ?\]) ?e] 'elfs-grep-all)
 
-(defun bluetooth-wrap-grep-all () (interactive) (project-wide-grep "bluetooth_wrap"))
-(global-set-key [(meta ?\]) ?w] 'bluetooth-wrap-grep-all)
+;; (defun bluetooth-wrap-grep-all () (interactive) (project-wide-grep "bluetooth_wrap"))
+;; (global-set-key [(meta ?\]) ?w] 'bluetooth-wrap-grep-all)
 
 (defun com-grep-all () (interactive) (project-wide-grep "com" nil nil ""))
 (global-set-key [(meta ?\]) ?c] 'com-grep-all)

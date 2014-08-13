@@ -27,6 +27,9 @@
 (define-key comint-mode-map [(control up)] 'comint-previous-matching-input-from-input)
 (define-key comint-mode-map [(control down)] 'comint-next-matching-input-from-input)
 
+(global-set-key [down] 'next-logical-line)
+(global-set-key [up] 'previous-logical-line)
+
 (global-set-key [(control meta r)] 'isearch-backward-regexp)
 (global-set-key [(control meta s)] 'isearch-forward-regexp)
 
@@ -62,11 +65,7 @@
 (global-set-key [(meta down)] (defun scroll-up-one () (interactive) (scroll-up 1)))
 
 (global-set-key [(meta ?3)] 'comment-region)
-(global-set-key [(meta ?4)] (defun uncomment-region () (interactive)
-			     (comment-region
-			      (region-beginning)
-			      (region-end)
-			      -1)))
+(global-set-key [(meta ?4)] 'uncomment-region)
 
 (global-set-key [f11] 'call-last-kbd-macro)
 (global-set-key [(control f11)] 'assign-last-kbd-macro-to-key)
@@ -119,7 +118,7 @@
 (global-set-key [(control meta f)] 'find-function)
 (global-set-key [(control x) (control meta f)] 'find-function-on-key)
 
-(global-set-key [(control ? )] 'anything)
+;(global-set-key [(control ? )] 'anything)
 
 (global-set-key [f5] 'flymake-compile)
 ;(global-unset-key [f6])

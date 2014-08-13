@@ -11,7 +11,7 @@
  '(dired-recursive-deletes (quote top))
  '(enable-recursive-minibuffers t)
  '(flymake-gui-warnings-enabled nil)
- '(global-whitespace-mode t)
+ '(global-whitespace-mode nil)
  '(haskell-indent-spaces 4)
  '(haskell-mode-hook (quote (turn-on-haskell-indentation)))
  '(ido-auto-merge-delay-time 60)
@@ -20,7 +20,7 @@
  '(ido-everywhere t)
  '(ido-file-extensions-order (quote (".py" ".c" "Makefile" ".s" ".S")))
  '(ido-ignore-buffers (quote ("\\` " "\\*Messages\\*" "\\*Ediff Registry\\*")))
- '(ido-ignore-files (quote ("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\.pyc$" "\\.o$" "\\.hi$" "\\.git/" "\\.gitignore$")))
+ '(ido-ignore-files (quote ("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\.pyc$" "\\.o$" "\\.hi$" "\\.dyn_hi$" "\\.dyn_o$" "\\.git/" "\\.gitignore$")))
  '(ido-max-prospects 60)
  '(ido-max-window-height 10)
  '(ido-max-work-directory-list 30)
@@ -42,13 +42,13 @@
  '(uniquify-separator "/")
  '(uniquify-strip-common-suffix nil)
  '(version-control (quote never))
- '(whitespace-style (quote (trailing tab-mark))))
+ '(whitespace-style (quote (trailing tabs))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 125 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(diff-added ((t (:inherit diff-changed :foreground "green"))))
  '(diff-removed ((t (:inherit diff-changed :foreground "red"))))
  '(flymake-errline ((t (:inherit nil :background "red4"))))
