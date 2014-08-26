@@ -16,3 +16,6 @@
 [submodule "magit"]
 	path = magit
 	url = git@github.com:magit/magit.git
+[submodule "dash"]
+	path = dash
+	url = git@github.com:magnars/dash.el.git

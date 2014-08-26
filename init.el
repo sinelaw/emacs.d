@@ -1,8 +1,12 @@
+;;; package --- Summary
+;;; Commentary:
+;;; Code:
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/dash.el")
 (add-to-list 'load-path "~/.emacs.d/haskell-mode")
 (add-to-list 'load-path "~/.emacs.d/auto-install")
 (add-to-list 'load-path "~/.emacs.d/flycheck")
+(add-to-list 'load-path "~/.emacs.d/dash")
 (add-to-list 'load-path "~/.emacs.d/undo-tree")
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/python-mode")
 (add-to-list 'load-path "~/.emacs.d/rtags/src")
@@ -12,14 +16,16 @@
 (setq compile-command "buildsome -C --disable-color -j8")
 (setq compile-history (list "buildsome -C --disable-color -j8" "cabal build" "cabal install" "make"))
 
+(require 'flycheck-via-make) ; before my-custom which refers to it
+
+(require 'my-custom)
+
 ;; TODO: add the ido find -name/-iname fix for wide-find-file
 
 (add-to-list 'load-path "~/.emacs.d/git-modes")
 (require 'git-rebase-mode)
 (add-to-list 'load-path "~/.emacs.d/magit")
 (require 'magit)
-
-(require 'my-custom)
 
 (require 'indent-region)
 (require 'uniquify)
@@ -61,3 +67,11 @@
 
 (delete-selection-mode t)
 (global-auto-revert-mode 1)
+
+(global-flycheck-mode)
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+
+(provide 'init)
+;;; init.el ends here
