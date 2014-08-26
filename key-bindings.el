@@ -17,6 +17,8 @@
 
 (global-set-key [(control shift ?s)] 'sort-lines)
 
+(global-set-key [(meta ?\[) ?R] 'rtags-restart-process)
+
 ;(global-set-key [(meta ?i) ?s] 'ispell-comments-and-strings)
 
 (require 'ido)
