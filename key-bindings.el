@@ -122,10 +122,10 @@
 
 ;(global-set-key [(control ? )] 'anything)
 
-(global-set-key [f5] 'flymake-compile)
-;(global-unset-key [f6])
-(global-set-key [(shift f6)] 'flymake-display-err-menu-for-current-line)
-(global-set-key [f6] 'flymake-goto-next-error)
+;; (global-set-key [f5] 'flymake-compile)
+;; ;(global-unset-key [f6])
+;; (global-set-key [(shift f6)] 'flymake-display-err-menu-for-current-line)
+;; (global-set-key [f6] 'flymake-goto-next-error)
 
 (defun add-review-comment ()
   (interactive)
