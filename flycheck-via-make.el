@@ -6,7 +6,7 @@
 
 (flycheck-define-checker make-based-checker
   "A Make-based syntax checker like flymake."
-  :command ("check-syntax" source
+  :command ("~/.emacs.d/bin/check-syntax" source
             (eval (flycheck-c/c++-quoted-include-directory)))
   :error-patterns
   ((error line-start
