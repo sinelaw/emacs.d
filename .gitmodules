@@ -1,6 +1,6 @@
 [submodule "rtags"]
 	path = rtags
-	url = git@github.com:Andersbakken/rtags.git
+	url = git@github.com:Peaker/rtags.git
 [submodule "undo-tree"]
 	path = undo-tree
 	url = git@github.com:emacsmirror/undo-tree.git
