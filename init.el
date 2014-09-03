@@ -18,6 +18,8 @@
 
 (require 'flycheck-via-make) ; before my-custom which refers to it
 
+(require 'ctx-switch-face)
+
 (require 'my-custom)
 
 ;; TODO: add the ido find -name/-iname fix for wide-find-file
@@ -79,7 +81,6 @@
 (global-flycheck-mode)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
 
 (provide 'init)
 ;;; init.el ends here
