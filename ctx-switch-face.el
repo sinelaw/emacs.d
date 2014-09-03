@@ -1,12 +1,12 @@
 (require 'cc-mode)
 
 (defface CTX-SWITCH-face
-  '((t (:background "purple" :foreground "black")))
+  '((t (:background "#AA22AA" :foreground "black")))
   "CTX_SWITCH face."
   :group 'c)
 
 (defface ctx-switch-face
-  '((t (:background "purple3" :foreground "white")))
+  '((t (:background "#330033" :foreground "white")))
   "ctx_switch face."
   :group 'c)
 
