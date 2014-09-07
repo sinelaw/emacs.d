@@ -8,6 +8,7 @@
 (add-to-list 'load-path "~/.emacs.d/flycheck")
 (add-to-list 'load-path "~/.emacs.d/dash")
 (add-to-list 'load-path "~/.emacs.d/undo-tree")
+(add-to-list 'load-path "~/.emacs.d/Fill-Column-Indicator")
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/python-mode")
 (add-to-list 'load-path "~/.emacs.d/rtags/src")
 ;(add-to-list 'load-path "~/.emacs.d/twisted")
@@ -74,6 +75,9 @@
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+(require 'fill-column-indicator)
+(add-hook 'prog-mode-hook 'fci-mode)
 
 (delete-selection-mode t)
 (global-auto-revert-mode 1)

@@ -19,3 +19,6 @@
 [submodule "dash"]
 	path = dash
 	url = git@github.com:magnars/dash.el.git
+[submodule "Fill-Column-Indicator"]
+	path = Fill-Column-Indicator
+	url = git@github.com:Peaker/Fill-Column-Indicator.git
