@@ -9,7 +9,7 @@
 (global-set-key [pause] 'kill-this-buffer)
 
 (global-set-key [(control b)] 'ido-switch-buffer)
-(global-set-key [(control ? )] 'ido-switch-buffer)
+;(global-set-key [(control ? )] 'ido-switch-buffer)
 
 (global-set-key [(meta g)] 'goto-line)
 
