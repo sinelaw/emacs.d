@@ -1,10 +1,18 @@
 (require 'os)
 
+(defun get-include-header-prefix ()
+  (if (boundp 'include-header-prefix)
+      include-header-prefix
+    ""))
+
 (defun c-insert-header-protector (&optional header-name)
   (interactive)
-  (let* ((protector-name
-          (replace-regexp-in-string "[^a-zA-Z0-9_]" "_"
-                                    (or header-name (os-basename (buffer-file-name))))))
+  (let* ((the-file (replace-regexp-in-string dir-local-curdir "" (buffer-file-name)))
+         (protector-name
+          (concat
+           (get-include-header-prefix)
+           (replace-regexp-in-string "[^a-zA-Z0-9_]" "_"
+                                     (or header-name the-file)))))
     (save-excursion
       (beginning-of-buffer)
       (insert "#ifndef __" (upcase protector-name) "_\n"
