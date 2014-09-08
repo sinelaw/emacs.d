@@ -11,7 +11,9 @@
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/python-mode")
 (add-to-list 'load-path "~/.emacs.d/rtags/src")
 (add-to-list 'load-path "~/.emacs.d/git-gutter-plus")
-;(add-to-list 'load-path "~/.emacs.d/twisted")
+(add-to-list 'load-path "~/.emacs.d/column-enforce-mode")
+(add-to-list 'load-path "~/.emacs.d/git-modes")
+(add-to-list 'load-path "~/.emacs.d/magit")
 (setq custom-file "~/.emacs.d/my-custom.el")
 
 (setq compile-command "buildsome -C --disable-color -j8")
@@ -21,14 +23,13 @@
 
 (require 'ctx-switch-face)
 
+(require 'magit)
+(require 'git-gutter+)
 (require 'my-custom)
 
 ;; TODO: add the ido find -name/-iname fix for wide-find-file
 
-(add-to-list 'load-path "~/.emacs.d/git-modes")
 (require 'git-rebase-mode)
-(add-to-list 'load-path "~/.emacs.d/magit")
-(require 'magit)
 
 (require 'indent-region)
 (require 'uniquify)
@@ -81,9 +82,10 @@
 
 (global-flycheck-mode)
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+(require 'column-enforce-mode)
+(add-hook 'prog-mode-hook 'column-enforce-mode)
 
-(require 'git-gutter+)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (provide 'init)
 ;;; init.el ends here
