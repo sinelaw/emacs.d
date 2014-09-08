@@ -139,4 +139,8 @@
   (save-excursion (insert comment-end)))
 (global-set-key [(meta shift ?w)] 'add-response-comment)
 
+; git-gutter-mode+
+(global-set-key [(meta ?p)] 'git-gutter+-previous-hunk)
+(global-set-key [(meta ?n)] 'git-gutter+-next-hunk)
+
 (provide 'key-bindings)

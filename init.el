@@ -11,6 +11,7 @@
 (add-to-list 'load-path "~/.emacs.d/Fill-Column-Indicator")
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/python-mode")
 (add-to-list 'load-path "~/.emacs.d/rtags/src")
+(add-to-list 'load-path "~/.emacs.d/git-gutter-plus")
 ;(add-to-list 'load-path "~/.emacs.d/twisted")
 (setq custom-file "~/.emacs.d/my-custom.el")
 
@@ -85,6 +86,8 @@
 (global-flycheck-mode)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+(require 'git-gutter+)
 
 (provide 'init)
 ;;; init.el ends here

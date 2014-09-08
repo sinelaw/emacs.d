@@ -17,6 +17,7 @@
  '(flymake-gui-warnings-enabled nil)
  '(flymake-no-changes-timeout 2)
  '(flymake-start-syntax-check-on-find-file nil)
+ '(global-git-gutter+-mode t)
  '(global-whitespace-mode nil)
  '(haskell-indent-spaces 4)
  '(haskell-mode-hook (quote (turn-on-haskell-indentation)))
