@@ -14,6 +14,8 @@
 (add-to-list 'load-path "~/.emacs.d/column-enforce-mode")
 (add-to-list 'load-path "~/.emacs.d/git-modes")
 (add-to-list 'load-path "~/.emacs.d/magit")
+(add-to-list 'load-path "~/.emacs.d/smooth-scrolling")
+
 (setq custom-file "~/.emacs.d/my-custom.el")
 
 (setq compile-command "buildsome -C --disable-color -j8")
@@ -86,6 +88,11 @@
 (add-hook 'prog-mode-hook 'column-enforce-mode)
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+(require 'smooth-scrolling)
+(setq smooth-scroll-margin 5)
+(setq scroll-conservatively 9999
+      scroll-preserve-screen-position t)
 
 (provide 'init)
 ;;; init.el ends here

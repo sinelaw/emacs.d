@@ -25,3 +25,6 @@
 [submodule "column-enforce-mode"]
 	path = column-enforce-mode
 	url = git@github.com:jordonbiondo/column-enforce-mode.git
+[submodule "smooth-scrolling"]
+	path = smooth-scrolling
+	url = git@github.com:aspiers/smooth-scrolling.git
