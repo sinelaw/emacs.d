@@ -7,6 +7,7 @@
 
 (global-set-key [(control f4)] 'bury-buffer)
 (global-set-key [pause] 'kill-this-buffer)
+(global-set-key [(meta delete)] 'kill-this-buffer)
 
 (global-set-key [(control b)] 'ido-switch-buffer)
 ;(global-set-key [(control ? )] 'ido-switch-buffer)
