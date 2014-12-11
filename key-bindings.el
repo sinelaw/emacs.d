@@ -146,4 +146,6 @@
 (global-set-key [(meta ?p)] 'git-gutter+-previous-hunk)
 (global-set-key [(meta ?n)] 'git-gutter+-next-hunk)
 
+(define-key haskell-mode-map (kbd "C-c i") 'hindent/reformat-decl)
+
 (provide 'key-bindings)

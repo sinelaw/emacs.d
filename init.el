@@ -15,11 +15,14 @@
 (add-to-list 'load-path "~/.emacs.d/git-modes")
 (add-to-list 'load-path "~/.emacs.d/magit")
 (add-to-list 'load-path "~/.emacs.d/smooth-scrolling")
+(add-to-list 'load-path "~/.emacs.d/hindent/elisp")
 
 (setq custom-file "~/.emacs.d/my-custom.el")
 
 (setq compile-command "buildsome -C --disable-color -j8")
 (setq compile-history (list "buildsome -C --disable-color -j8" "cabal build" "cabal install" "make"))
+
+(require 'hindent)
 
 (require 'flycheck-via-make) ; before my-custom which refers to it
 
