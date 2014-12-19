@@ -61,6 +61,17 @@
 (add-to-list 'auto-mode-alist '("\\.hs\\'" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.hsc\\'" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.lhs\\'" . haskell-mode))
+(add-to-list 'auto-mode-alist '("\\.hs\\'" . haskell-mode))
+(add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
+(add-to-list 'auto-mode-alist '("\\.hcr\\'" . haskell-core-mode))
+
+(custom-set-variables
+ '(safe-local-variable-values
+   (quote ((hindent-style . "chris-done")
+           (hindent-style . "gibiansky")
+           (hindent-style . "johan-tibell")))))
+
+(set-language-environment "UTF-8")
 
 (require 'grep-a-lot)
 
@@ -100,6 +111,9 @@
 (setq smooth-scroll-margin 5)
 (setq scroll-conservatively 9999
       scroll-preserve-screen-position t)
+
+(load "haskell-mode-autoloads.el")
+(load "chris-done-haskell.el")
 
 (provide 'init)
 ;;; init.el ends here
