@@ -151,4 +151,9 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+(global-set-key (kbd "C-s-<left>") 'windmove-left)
+(global-set-key (kbd "C-s-<right>") 'windmove-right)
+(global-set-key (kbd "C-s-<up>") 'windmove-up)
+(global-set-key (kbd "C-s-<down>") 'windmove-down)
+
 (provide 'key-bindings)
