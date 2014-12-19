@@ -21,7 +21,9 @@
 (setq grep-find-command "git grep --no-color -n -e ")
 (setq grep-find-history '("find . -type f -name \"*.[ch]\" -print0 | xargs -0 -e grep -nH -e "))
 
-(setenv "PATH" (concat (getenv "HOME") "/.cabal/bin" ":" (getenv "PATH")))
+(let ((cabal-bin (concat (getenv "HOME") "/.cabal/bin")))
+  (setenv "PATH" (concat cabal-bin ":" (getenv "PATH")))
+  (push cabal-bin exec-path))
 
 (defun set-term ()
   (insert "export TERM=vt100")
