@@ -16,11 +16,15 @@
 (add-to-list 'load-path "~/.emacs.d/magit")
 (add-to-list 'load-path "~/.emacs.d/smooth-scrolling")
 (add-to-list 'load-path "~/.emacs.d/hindent/elisp")
+(add-to-list 'load-path "~/.emacs.d/smex")
 
 (setq custom-file "~/.emacs.d/my-custom.el")
 
 (setq compile-command "buildsome -C --disable-color -j8")
 (setq compile-history (list "buildsome -C --disable-color -j8" "cabal build" "cabal install" "make"))
+
+(require 'smex)
+(smex-initialize)
 
 (require 'hindent)
 
