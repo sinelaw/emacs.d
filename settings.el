@@ -19,7 +19,7 @@
 (setq compile-history
       '("make -k"))
 (setq grep-find-command "git grep --no-color -n -e ")
-(setq grep-find-history '("find . -type f -name \"*.[ch]\" -print0 | xargs -0 -e grep -nH -e "))
+(setq grep-find-history '("find . -type f -print0 | xargs -0 -e grep -nH --color=never -e "))
 
 (let ((cabal-bin (concat (getenv "HOME") "/.cabal/bin")))
   (setenv "PATH" (concat cabal-bin ":" (getenv "PATH")))
