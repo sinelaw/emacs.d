@@ -101,7 +101,12 @@
 (global-set-key [(meta return)] 'dirs)
 (global-set-key [f5] 'delete-other-windows)
 
-(global-set-key [(control f9)] 'grep-find)
+(defun recompile-in-compilation-buffer ()
+  (interactive)
+  (switch-to-buffer "*compilation*")
+  (recompile))
+
+(global-set-key [(control f9)] 'recompile-in-compilation-buffer)
 (global-set-key [(shift f9)] 'grep-find)
 
 (global-set-key [f9] 'compile)
