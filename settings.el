@@ -18,6 +18,7 @@
 
 (setq compile-history
       '("make -k"))
+(setq compilation-scroll-output 'first-error)
 (setq grep-find-command "git grep --no-color -n -e ")
 (setq grep-find-history '("find . -type f -print0 | xargs -0 -e grep -nH --color=never -e "))
 

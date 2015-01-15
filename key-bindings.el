@@ -38,13 +38,20 @@
 (global-set-key [(control meta r)] 'isearch-backward-regexp)
 (global-set-key [(control meta s)] 'isearch-forward-regexp)
 
+(defun define-newline-and-indent-in-mode (mode-map)
+  (define-key mode-map [return] 'newline-and-indent))
+
+(define-newline-and-indent-in-mode emacs-lisp-mode-map)
+
+;; (require 'haskell-mode)
+;; (define-newline-and-indent-in-mode haskell-mode-map)
+;; (define-key haskell-mode-map (kbd "C-c i") 'hindent/reformat-decl)
+
 (require 'cc-mode)
-(require 'python-mode)
-(require 'haskell-mode)
-(let ((newline-and-indent-modes (list c-mode-map haskell-mode-map emacs-lisp-mode-map)))
-  (mapc (lambda (map) (define-key map [return] 'newline-and-indent)) newline-and-indent-modes)
-  (define-key c-mode-map [return] 'newline-and-indent)
-  (define-key py-mode-map [return] 'newline-and-indent))
+(define-newline-and-indent-in-mode c-mode-map)
+
+;; (require 'python-mode)
+;; (define-newline-and-indent-in-mode py-mode-map)
 
 (global-set-key [(control insert)] 'clipboard-kill-ring-save)
 (global-set-key [(shift delete)] 'clipboard-kill-region)
@@ -106,8 +113,20 @@
   (switch-to-buffer "*compilation*")
   (recompile))
 
+(defun resolve-trivial-conflicts ()
+  (interactive)
+  (setq compilation-buffer-name-function (lambda (mode) "*resolve-trivial-conflicts*"))
+  (compile "resolve-trivial-conflicts -d")
+  (setq compilation-buffer-name-function nil))
+
+(global-set-key [(control f10)] 'resolve-trivial-conflicts)
 (global-set-key [(control f9)] 'recompile-in-compilation-buffer)
 (global-set-key [(shift f9)] 'grep-find)
+(defun haskell-sort-align-imports ()
+  (interactive)
+  (haskell-sort-imports)
+  (haskell-align-imports))
+(global-set-key [(shift f8)] 'haskell-sort-align-imports)
 
 (global-set-key [f9] 'compile)
 (global-set-key [f1] 'manual-entry)
@@ -150,8 +169,6 @@
 ; git-gutter-mode+
 (global-set-key [(meta ?p)] 'git-gutter+-previous-hunk)
 (global-set-key [(meta ?n)] 'git-gutter+-next-hunk)
-
-(define-key haskell-mode-map (kbd "C-c i") 'hindent/reformat-decl)
 
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)

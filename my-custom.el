@@ -6,6 +6,7 @@
  '(ansi-color-names-vector ["black" "red" "green" "yellow" "blue" "magenta" "cyan" "white"])
  '(c-basic-offset 8)
  '(c-macro-prompt-flag t)
+ '(case-fold-search t)
  '(dabbrev-case-distinction t)
  '(dabbrev-case-fold-search nil)
  '(dired-recursive-copies (quote always))
@@ -68,7 +69,7 @@
  '(rtags-completions-enabled t)
  '(rtags-path "~/.emacs.d")
  '(rtags-rc-log-enabled t)
- '(safe-local-variable-values (quote ((include-header-prefix . "ELFS__") (eval progn (setq flycheck-ghc-search-path (list (concat dir-local-curdir "/submodules/AlgoW") (concat dir-local-curdir "/bottlelib") (concat dir-local-curdir) (concat dir-local-curdir "/dist/build/autogen"))) (setq flycheck-idle-change-delay 1.0)) (eval setq dir-local-curdir (file-name-directory (let ((d (dir-locals-find-file "."))) (if (stringp d) d (car d))))) (hindent-style . "chris-done") (hindent-style . "gibiansky") (hindent-style . "johan-tibell"))))
+ '(safe-local-variable-values (quote ((include-header-prefix . "ELFS__") (eval setq dir-local-curdir (file-name-directory (let ((d (dir-locals-find-file "."))) (if (stringp d) d (car d))))) (hindent-style . "chris-done") (hindent-style . "gibiansky") (hindent-style . "johan-tibell"))))
  '(session-use-package t nil (session))
  '(shell-input-autoexpand t)
  '(show-paren-style (quote expression))
@@ -88,7 +89,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(column-marker-1 ((t (:background "#444"))))
  '(diff-added ((t (:inherit diff-changed :foreground "green"))))
  '(diff-removed ((t (:inherit diff-changed :foreground "red"))))
