@@ -100,12 +100,12 @@
 (delete-selection-mode t)
 (global-auto-revert-mode 1)
 
-(global-flycheck-mode)
+;; (global-flycheck-mode)
 
 (require 'column-enforce-mode)
 (add-hook 'prog-mode-hook 'column-enforce-mode)
 
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (require 'smooth-scrolling)
 (setq smooth-scroll-margin 5)
