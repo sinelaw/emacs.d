@@ -163,9 +163,9 @@
 ;; (add-hook 'haskell-interactive-mode-hook 'structured-haskell-repl-mode)
 (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
 
-(defun load-after-save ()
-  (add-hook 'after-save-hook 'haskell-process-load-or-reload :local t))
-(add-hook 'haskell-mode-hook 'load-after-save)
+;; (defun load-after-save ()
+;;   (add-hook 'after-save-hook 'haskell-process-load-or-reload :local t))
+;; (add-hook 'haskell-mode-hook 'load-after-save)
 
 
 ;; Keybindings
