@@ -115,9 +115,8 @@
 
 (defun resolve-trivial-conflicts ()
   (interactive)
-  (setq compilation-buffer-name-function (lambda (mode) "*resolve-trivial-conflicts*"))
-  (compile "resolve-trivial-conflicts -d")
-  (setq compilation-buffer-name-function nil))
+  (let ((compilation-buffer-name-function (lambda (mode) "*resolve-trivial-conflicts*")))
+    (compile "resolve-trivial-conflicts -d")))
 
 (global-set-key [(control f10)] 'resolve-trivial-conflicts)
 (global-set-key [(control f9)] 'recompile-in-compilation-buffer)

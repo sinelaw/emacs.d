@@ -17,6 +17,9 @@
 (add-to-list 'load-path "~/.emacs.d/smooth-scrolling")
 (add-to-list 'load-path "~/.emacs.d/hindent/elisp")
 (add-to-list 'load-path "~/.emacs.d/smex")
+;; (add-to-list 'load-path "~/.emacs.d/auto-complete")
+
+;; (require 'auto-complete)
 
 (setq custom-file "~/.emacs.d/my-custom.el")
 

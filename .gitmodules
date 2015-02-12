@@ -40,3 +40,6 @@
 [submodule "ghci-ng"]
 	path = ghci-ng
 	url = https://github.com/chrisdone/ghci-ng.git
+[submodule "auto-complete"]
+	path = auto-complete
+	url = https://github.com/auto-complete/auto-complete.git
