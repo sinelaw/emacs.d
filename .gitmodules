@@ -43,3 +43,6 @@
 [submodule "auto-complete"]
 	path = auto-complete
 	url = https://github.com/auto-complete/auto-complete.git
+[submodule "git-timemachine"]
+	path = git-timemachine
+	url = git@github.com:pidu/git-timemachine.git

@@ -17,6 +17,7 @@
 (add-to-list 'load-path "~/.emacs.d/smooth-scrolling")
 (add-to-list 'load-path "~/.emacs.d/hindent/elisp")
 (add-to-list 'load-path "~/.emacs.d/smex")
+(add-to-list 'load-path "~/.emacs.d/git-timemachine")
 ;; (add-to-list 'load-path "~/.emacs.d/auto-complete")
 
 ;; (require 'auto-complete)
@@ -26,6 +27,9 @@
 
 (setq compile-command "buildsome -C --disable-color -j8")
 (setq compile-history (list "buildsome -C --disable-color -j8" "cabal build" "cabal install" "make"))
+
+(require 'git-timemachine)
+(global-set-key [(control super ?g)] 'git-timemachine)
 
 (require 'smex)
 (smex-initialize)
