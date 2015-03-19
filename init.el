@@ -22,6 +22,7 @@
 ;; (require 'auto-complete)
 
 (setq custom-file "~/.emacs.d/my-custom.el")
+(setq-default truncate-lines t)
 
 (setq compile-command "buildsome -C --disable-color -j8")
 (setq compile-history (list "buildsome -C --disable-color -j8" "cabal build" "cabal install" "make"))
