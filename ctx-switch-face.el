@@ -13,8 +13,8 @@
 (defun add-ctx-switch-keyword ()
   (font-lock-add-keywords
    nil
-   '(("\\<\\(CTX_SWITCH\\)" 1 'CTX-SWITCH-face t)
-     ("[^/]\\<\\(ctx_switch\\)\\>" 1 'ctx-switch-face t))))
+   '(("\\<\\(\\(?:IO_\\)?CTX_SWITCH\\)" 1 'CTX-SWITCH-face t)
+     ("[^/]\\<\\(\\(?:io_\\)?ctx_switch\\)\\>" 1 'ctx-switch-face t))))
 (add-hook 'c-mode-common-hook 'add-ctx-switch-keyword)
 
 (provide 'ctx-switch-face)
