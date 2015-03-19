@@ -120,4 +120,8 @@
 (load "chris-done-haskell.el")
 
 (provide 'init)
+
+; new gdb is incredibly annoying, use old gud-gdb instead
+(fset 'gdb 'gud-gdb)
+
 ;;; init.el ends here

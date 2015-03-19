@@ -19,6 +19,7 @@
  '(flymake-gui-warnings-enabled nil)
  '(flymake-no-changes-timeout 2)
  '(flymake-start-syntax-check-on-find-file nil)
+ '(gdb-non-stop-setting nil)
  '(git-gutter+-disabled-modes (quote (haskell-mode)))
  '(global-git-gutter+-mode t)
  '(global-whitespace-mode nil)
