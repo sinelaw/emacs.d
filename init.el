@@ -18,9 +18,17 @@
 (add-to-list 'load-path "~/.emacs.d/hindent/elisp")
 (add-to-list 'load-path "~/.emacs.d/smex")
 (add-to-list 'load-path "~/.emacs.d/git-timemachine")
+(add-to-list 'load-path "~/.emacs.d/emacs-eclim")
 ;; (add-to-list 'load-path "~/.emacs.d/auto-complete")
 
 ;; (require 'auto-complete)
+
+(require 'package)
+(package-initialize)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(require 'eclimd)
+(global-eclim-mode)
 
 (setq custom-file "~/.emacs.d/my-custom.el")
 (setq-default truncate-lines t)
@@ -101,6 +109,8 @@
 ;; (rtags-start-process-maybe)
 ;; (rtags-enable-standard-keybindings nil "\M-[")
 ;; (define-key c-mode-base-map [(meta ?.)] 'rtags-find-symbol-at-point)
+
+(start-eclimd (concat (getenv "HOME") "/workspace"))
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)

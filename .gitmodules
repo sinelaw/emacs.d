@@ -46,3 +46,9 @@
 [submodule "git-timemachine"]
 	path = git-timemachine
 	url = git@github.com:pidu/git-timemachine.git
+[submodule "emacs-eclim"]
+	path = emacs-eclim
+	url = git@github.com:ElastiLotem/emacs-eclim.git
+[submodule "eclim"]
+	path = eclim
+	url = git@github.com:ervandew/eclim.git
