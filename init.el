@@ -9,7 +9,7 @@
 (add-to-list 'load-path "~/.emacs.d/dash")
 (add-to-list 'load-path "~/.emacs.d/undo-tree")
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/python-mode")
-(add-to-list 'load-path "~/.emacs.d/rtags/src")
+;(add-to-list 'load-path "~/.emacs.d/rtags/src")
 (add-to-list 'load-path "~/.emacs.d/git-gutter-plus")
 (add-to-list 'load-path "~/.emacs.d/column-enforce-mode")
 (add-to-list 'load-path "~/.emacs.d/git-modes")
@@ -97,10 +97,10 @@
   (toggle-read-only))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
-(require 'rtags)
-(rtags-start-process-maybe)
-(rtags-enable-standard-keybindings nil "\M-[")
-(define-key c-mode-base-map [(meta ?.)] 'rtags-find-symbol-at-point)
+;; (require 'rtags)
+;; (rtags-start-process-maybe)
+;; (rtags-enable-standard-keybindings nil "\M-[")
+;; (define-key c-mode-base-map [(meta ?.)] 'rtags-find-symbol-at-point)
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
