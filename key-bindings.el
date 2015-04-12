@@ -130,6 +130,15 @@
 (global-set-key [f9] 'compile)
 (global-set-key [f1] 'manual-entry)
 
+(defun buildsome-o ()
+  (interactive)
+  (let* ((file-name (buffer-file-name))
+         (o-name (concat "\"out/" (file-name-base file-name) ".o\"")))
+    (unless (string-match "\\(.*\\)\\.c" file-name) (error "Not a .c file"))
+    (let ((compilation-buffer-name-function (lambda (dummy) (concat "*" o-name "*"))))
+      (compile (concat "buildsome --disable-color -j8 " o-name)))))
+(global-set-key [(super f9)] 'buildsome-o)
+
 (global-set-key [(control kp-subtract)] 'hs-hide-all)
 (global-set-key [(control kp-add)] 'hs-show-all)
 
