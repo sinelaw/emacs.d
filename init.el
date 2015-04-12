@@ -33,8 +33,8 @@
 (setq custom-file "~/.emacs.d/my-custom.el")
 (setq-default truncate-lines t)
 
-(setq compile-command "buildsome -C --disable-color -j8")
-(setq compile-history (list "buildsome -C --disable-color -j8" "cabal build" "cabal install" "make"))
+(setq compile-command "buildsome --disable-color -j8")
+(setq compile-history (list "buildsome --disable-color -j8" "cabal build" "cabal install" "make"))
 
 (require 'git-timemachine)
 (global-set-key [(control super ?g)] 'git-timemachine)
