@@ -50,6 +50,7 @@
  '(haskell-process-use-presentation-mode t)
  '(haskell-stylish-on-save nil)
  '(haskell-tags-on-save nil)
+ '(helm-command-prefix-key "s-x")
  '(hindent-style "chris-done")
  '(ido-auto-merge-delay-time 60)
  '(ido-create-new-buffer (quote prompt))
@@ -67,6 +68,7 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(isearch-lazy-highlight t)
  '(lazy-highlight-initial-delay 0)
+ '(magit-diff-options nil)
  '(p4-use-p4config-exclusively t)
  '(rtags-completions-enabled t)
  '(rtags-path "~/.emacs.d")
@@ -91,7 +93,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 153 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(column-marker-1 ((t (:background "#444"))))
  '(diff-added ((t (:inherit diff-changed :foreground "green"))))
  '(diff-removed ((t (:inherit diff-changed :foreground "red"))))
@@ -108,6 +110,8 @@
  '(mode-line ((((class color) (min-colors 88)) (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button)))))
  '(mode-line-inactive ((default (:inherit mode-line :slant italic)) (((class color) (min-colors 88) (background dark)) (:background "grey20" :foreground "grey80" :box (:line-width -1 :color "grey40") :weight light))))
  '(py-builtins-face ((t (:foreground "#FF6600"))))
+ '(secondary-selection ((t (:background "#111133"))))
+ '(shadow ((t (:foreground "grey70"))))
  '(show-paren-match ((((class color) (background dark)) (:background "#332266")))))
 
 (provide 'my-custom)

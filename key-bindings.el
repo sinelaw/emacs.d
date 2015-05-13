@@ -9,10 +9,15 @@
 (global-set-key [pause] 'kill-this-buffer)
 (global-set-key [(meta delete)] 'kill-this-buffer)
 
-(global-set-key [(control b)] 'ido-switch-buffer)
+;(global-set-key [(control b)] 'ido-switch-buffer)
 ;(global-set-key [(control ? )] 'ido-switch-buffer)
+(global-set-key [(control b)] 'helm-buffers-list)
+(global-set-key [(control x) (control f)] 'helm-find-files)
 
 (global-set-key [(meta g)] 'goto-line)
+
+(define-key c-mode-map [(control d)] 'highlight-symbol-prev)
+(define-key c-mode-map [(control f)] 'highlight-symbol-next)
 
 (global-set-key [(control x) (shift v) (shift k)] 'dvc-kill-all-buffers)
 
@@ -24,9 +29,9 @@
 
 ;(global-set-key [(meta ?i) ?s] 'ispell-comments-and-strings)
 
-(require 'ido)
-(let ((ido-mode-map (cdr ido-minor-mode-map-entry)))
-  (define-key ido-mode-map [(control return)] 'ido-exit-minibuffer))
+;; (require 'ido)
+;; (let ((ido-mode-map (cdr ido-minor-mode-map-entry)))
+;;   (define-key ido-mode-map [(control return)] 'ido-exit-minibuffer))
 
 (require 'comint)
 (define-key comint-mode-map [(control up)] 'comint-previous-matching-input-from-input)
@@ -66,7 +71,7 @@
 (global-set-key [(meta super left)] 'my-unindent-region)
 
 (global-set-key [(control tab)] 'other-window)
-(define-key (cdr ido-minor-mode-map-entry) [(control tab)] 'other-window)
+;(define-key (cdr ido-minor-mode-map-entry) [(control tab)] 'other-window)
 
 (global-set-key [(control h) (control v)] 'customize-variable)
 
@@ -174,12 +179,21 @@
   (save-excursion (insert comment-end)))
 (global-set-key [(meta shift ?w)] 'add-response-comment)
 
+(require 'git-timemachine)
+(global-set-key [(super ?g) ?g] 'git-timemachine)
+(global-set-key [(super ?g) ?s] 'magit-status)
+(global-set-key [(super ?g) ?r] 'magit-rebase-step)
+(global-set-key [(super ?g) ?b] 'magit-branch-manager)
+
 ; git-gutter-mode+
 (global-set-key [(meta ?p)] 'git-gutter+-previous-hunk)
 (global-set-key [(meta ?n)] 'git-gutter+-next-hunk)
 
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key [f7] 'helm-find)
+(global-set-key [f6] 'helm-git-grep)
+(global-set-key [(shift f6)] 'helm-ls-git-ls)
+(global-set-key (kbd "M-x") 'helm-M-x)
+;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 (global-set-key (kbd "C-s-<left>") 'windmove-left)
 (global-set-key (kbd "C-s-<right>") 'windmove-right)

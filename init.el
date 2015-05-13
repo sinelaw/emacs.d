@@ -16,10 +16,15 @@
 (add-to-list 'load-path "~/.emacs.d/magit")
 (add-to-list 'load-path "~/.emacs.d/smooth-scrolling")
 (add-to-list 'load-path "~/.emacs.d/hindent/elisp")
-(add-to-list 'load-path "~/.emacs.d/smex")
+;(add-to-list 'load-path "~/.emacs.d/smex")
 (add-to-list 'load-path "~/.emacs.d/git-timemachine")
 (add-to-list 'load-path "~/.emacs.d/emacs-eclim")
 ;; (add-to-list 'load-path "~/.emacs.d/auto-complete")
+(add-to-list 'load-path "~/.emacs.d/helm")
+(add-to-list 'load-path "~/.emacs.d/helm-ls-git")
+(add-to-list 'load-path "~/.emacs.d/helm-git-grep")
+(add-to-list 'load-path "~/.emacs.d/helm-proc")
+(add-to-list 'load-path "~/.emacs.d/emacs-async")
 
 ;; (require 'auto-complete)
 
@@ -36,11 +41,13 @@
 (setq compile-command "buildsome --disable-color -j8")
 (setq compile-history (list "buildsome --disable-color -j8" "cabal build" "cabal install" "make"))
 
-(require 'git-timemachine)
-(global-set-key [(control super ?g)] 'git-timemachine)
+(require 'helm-config)
+(require 'helm-ls-git)
+(require 'helm-git-grep)
+(require 'helm-proc)
 
-(require 'smex)
-(smex-initialize)
+;(require 'smex)
+;(smex-initialize)
 
 (require 'hindent)
 
@@ -110,7 +117,7 @@
 ;; (rtags-enable-standard-keybindings nil "\M-[")
 ;; (define-key c-mode-base-map [(meta ?.)] 'rtags-find-symbol-at-point)
 
-(start-eclimd (concat (getenv "HOME") "/workspace"))
+;(start-eclimd (concat (getenv "HOME") "/workspace"))
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
