@@ -200,4 +200,21 @@
 (global-set-key (kbd "C-s-<up>") 'windmove-up)
 (global-set-key (kbd "C-s-<down>") 'windmove-down)
 
+
+(defun helm-find-files-navigate-forward (&rest args)
+  (interactive)
+  (if (file-directory-p (helm-get-selection))
+      (helm-execute-persistent-action)
+    (apply 'helm-maybe-exit-minibuffer args)))
+(define-key helm-find-files-map [return] 'helm-find-files-navigate-forward)
+
+(defun helm-find-files-navigate-back (&rest args)
+  (interactive)
+  (if (= (length helm-pattern) (length (helm-find-files-initial-input)))
+      (helm-find-files-up-one-level 1)
+    (apply 'helm-ff-delete-char-backward args)))
+(define-key helm-find-files-map [backspace] 'helm-find-files-navigate-back)
+
+(define-key helm-find-files-map [(control ?d)] (lambda () (interactive) (helm-select-nth-action 1)))
+
 (provide 'key-bindings)
