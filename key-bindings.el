@@ -120,7 +120,7 @@
 
 (defun resolve-trivial-conflicts ()
   (interactive)
-  (let ((compilation-buffer-name-function (lambda (mode) "*resolve-trivial-conflicts*")))
+  (let ((compilation-buffer-name-function (lambda (mode) "*exec resolve-trivial-conflicts*")))
     (compile "resolve-trivial-conflicts -d")))
 
 (global-set-key [(control f10)] 'resolve-trivial-conflicts)
@@ -135,14 +135,27 @@
 (global-set-key [f9] 'compile)
 (global-set-key [f1] 'manual-entry)
 
-(defun buildsome-o ()
-  (interactive)
+(defun buildsome-this-file (ext)
   (let* ((file-name (buffer-file-name))
-         (o-name (concat "\"out/" (file-name-base file-name) ".o\"")))
+         (o-name (concat "\"out/" (file-name-base file-name) "." ext "\"")))
     (unless (string-match "\\(.*\\)\\.c" file-name) (error "Not a .c file"))
     (let ((compilation-buffer-name-function (lambda (dummy) (concat "*" o-name "*"))))
       (compile (concat "buildsome --disable-color -j8 " o-name)))))
+
+(defun buildsome-o ()
+  (interactive)
+  (buildsome-this-file "o"))
 (global-set-key [(super f9)] 'buildsome-o)
+
+(defun buildsome-s ()
+  (interactive)
+  (buildsome-this-file "s"))
+(global-set-key [(shift super f9) ?s] 'buildsome-s)
+
+(defun buildsome-E ()
+  (interactive)
+  (buildsome-this-file "E"))
+(global-set-key [(shift super f9) ?E] 'buildsome-E)
 
 (global-set-key [(control kp-subtract)] 'hs-hide-all)
 (global-set-key [(control kp-add)] 'hs-show-all)
@@ -192,6 +205,7 @@
 (global-set-key [f7] 'helm-find)
 (global-set-key [f6] 'helm-git-grep)
 (global-set-key [(shift f6)] 'helm-ls-git-ls)
+(global-set-key [(control f6)] 'switch-to-other-buffer)
 (global-set-key (kbd "M-x") 'helm-M-x)
 ;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
@@ -216,5 +230,8 @@
 (define-key helm-find-files-map [backspace] 'helm-find-files-navigate-back)
 
 (define-key helm-find-files-map [(control ?d)] (lambda () (interactive) (helm-select-nth-action 1)))
+
+(global-set-key [C-mouse-4] 'text-scale-increase)
+(global-set-key [C-mouse-5] 'text-scale-decrease)
 
 (provide 'key-bindings)

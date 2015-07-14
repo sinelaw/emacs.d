@@ -12,7 +12,6 @@
 
 (setenv "TERM" "emacs")
 
-(server-start)
 (setenv "EDITOR" "emacsclient")
 (setenv "PAGER" "")
 

@@ -50,7 +50,9 @@
  '(haskell-process-use-presentation-mode t)
  '(haskell-stylish-on-save nil)
  '(haskell-tags-on-save nil)
+ '(helm-boring-file-regexp-list (quote ("\\.hi$" "\\.o$" "~$" "\\.bin$" "\\.lbin$" "\\.so$" "\\.a$" "\\.ln$" "\\.blg$" "\\.bbl$" "\\.elc$" "\\.lof$" "\\.glo$" "\\.idx$" "\\.lot$" "\\.svn$" "\\.hg$" "\\.git$" "\\.bzr$" "CVS$" "_darcs$" "_MTN$" "\\.fmt$" "\\.tfm$" "\\.class$" "\\.fas$" "\\.lib$" "\\.mem$" "\\.x86f$" "\\.sparcf$" "\\.dfsl$" "\\.pfsl$" "\\.d64fsl$" "\\.p64fsl$" "\\.lx64fsl$" "\\.lx32fsl$" "\\.dx64fsl$" "\\.dx32fsl$" "\\.fx64fsl$" "\\.fx32fsl$" "\\.sx64fsl$" "\\.sx32fsl$" "\\.wx64fsl$" "\\.wx32fsl$" "\\.fasl$" "\\.ufsl$" "\\.fsl$" "\\.dxl$" "\\.lo$" "\\.la$" "\\.gmo$" "\\.mo$" "\\.toc$" "\\.aux$" "\\.cp$" "\\.fn$" "\\.ky$" "\\.pg$" "\\.tp$" "\\.vr$" "\\.cps$" "\\.fns$" "\\.kys$" "\\.pgs$" "\\.tps$" "\\.vrs$" "\\.pyc$" "\\.pyo$" "/\\.$" "/\\.\\.$")))
  '(helm-command-prefix-key "s-x")
+ '(helm-ff-skip-boring-files t)
  '(hindent-style "chris-done")
  '(ido-auto-merge-delay-time 60)
  '(ido-create-new-buffer (quote prompt))
@@ -68,12 +70,12 @@
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(isearch-lazy-highlight t)
  '(lazy-highlight-initial-delay 0)
- '(magit-diff-options nil)
+ '(magit-diff-options (quote ("--function-context")))
  '(p4-use-p4config-exclusively t)
  '(rtags-completions-enabled t)
  '(rtags-path "~/.emacs.d")
  '(rtags-rc-log-enabled t)
- '(safe-local-variable-values (quote ((include-header-prefix . "ELFS__") (eval setq dir-local-curdir (file-name-directory (let ((d (dir-locals-find-file "."))) (if (stringp d) d (car d))))) (hindent-style . "chris-done") (hindent-style . "gibiansky") (hindent-style . "johan-tibell"))))
+ '(safe-local-variable-values (quote ((eval setq dir-local-curdir (file-name-directory (let ((d (dir-locals-find-file "."))) (if (stringp d) d (car d))))) (hindent-style . "chris-done") (hindent-style . "gibiansky") (hindent-style . "johan-tibell"))))
  '(session-use-package t nil (session))
  '(shell-input-autoexpand t)
  '(show-paren-style (quote expression))
@@ -93,7 +95,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 153 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 150 :width normal :foundry "unknown" :family "DejaVu Sans Mono"))))
  '(column-marker-1 ((t (:background "#444"))))
  '(diff-added ((t (:inherit diff-changed :foreground "green"))))
  '(diff-removed ((t (:inherit diff-changed :foreground "red"))))

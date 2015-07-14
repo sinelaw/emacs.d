@@ -143,4 +143,6 @@
 ; new gdb is incredibly annoying, use old gud-gdb instead
 (fset 'gdb 'gud-gdb)
 
+(server-start)
+
 ;;; init.el ends here
