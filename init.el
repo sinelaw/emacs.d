@@ -92,12 +92,6 @@
 (add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
 (add-to-list 'auto-mode-alist '("\\.hcr\\'" . haskell-core-mode))
 
-(custom-set-variables
- '(safe-local-variable-values
-   (quote ((hindent-style . "chris-done")
-           (hindent-style . "gibiansky")
-           (hindent-style . "johan-tibell")))))
-
 (set-language-environment "UTF-8")
 
 (require 'grep-a-lot)
