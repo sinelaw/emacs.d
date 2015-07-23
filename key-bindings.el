@@ -128,9 +128,13 @@
 (global-set-key [(shift f9)] 'grep-find)
 (defun haskell-sort-align-imports ()
   (interactive)
-  (haskell-sort-imports)
-  (haskell-align-imports))
-(global-set-key [(shift f8)] 'haskell-sort-align-imports)
+  (save-excursion
+    (haskell-navigate-imports)
+    (haskell-sort-imports)
+    (haskell-align-imports)))
+(require 'haskell-mode)
+(define-key haskell-mode-map [(shift f8)] 'haskell-sort-align-imports)
+(define-key haskell-mode-map [f8] 'haskell-sort-align-imports)
 
 (global-set-key [f9] 'compile)
 (global-set-key [f1] 'manual-entry)
@@ -173,13 +177,6 @@
 (global-set-key [(control meta f)] 'find-function)
 (global-set-key [(control x) (control meta f)] 'find-function-on-key)
 
-;(global-set-key [(control ? )] 'anything)
-
-;; (global-set-key [f5] 'flymake-compile)
-;; ;(global-unset-key [f6])
-;; (global-set-key [(shift f6)] 'flymake-display-err-menu-for-current-line)
-;; (global-set-key [f6] 'flymake-goto-next-error)
-
 (defun add-review-comment ()
   (interactive)
   (insert (concat comment-start "REVIEW(Eyal): "))
@@ -203,8 +200,8 @@
 (global-set-key [(meta ?n)] 'git-gutter+-next-hunk)
 
 (global-set-key [f7] 'helm-find)
-(global-set-key [f6] 'helm-git-grep)
-(global-set-key [(shift f6)] 'helm-ls-git-ls)
+(global-set-key [(shift f6)] 'helm-git-grep)
+(global-set-key [f6] 'helm-ls-git-ls)
 (global-set-key [(control f6)] 'switch-to-other-buffer)
 (global-set-key (kbd "M-x") 'helm-M-x)
 ;(global-set-key (kbd "M-X") 'smex-major-mode-commands)

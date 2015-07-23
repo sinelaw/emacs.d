@@ -26,7 +26,12 @@
 (add-to-list 'load-path "~/.emacs.d/helm-proc")
 (add-to-list 'load-path "~/.emacs.d/emacs-async")
 
+(setq woman-show-log nil)
+
 ;; (require 'auto-complete)
+
+(require 'nurumacs)
+(setq nurumacs-map nil)
 
 (require 'recentf)
 (recentf-mode 1)
@@ -70,7 +75,6 @@
 (require 'indent-region)
 (require 'uniquify)
 (require 'dired-ext)
-(require 'key-bindings)
 (require 'grep-all)
 (require 'settings)
 (require 'mode-hooks)
@@ -142,6 +146,10 @@
 
 ; new gdb is incredibly annoying, use old gud-gdb instead
 (fset 'gdb 'gud-gdb)
+
+(setq inhibit-splash-screen t)
+
+(require 'key-bindings)
 
 (server-start)
 
