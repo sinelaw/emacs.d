@@ -64,3 +64,6 @@
 [submodule "helm-proc"]
 	path = helm-proc
 	url = git@github.com:markus1189/helm-proc.git
+[submodule "s.el"]
+	path = s.el
+	url = https://github.com/magnars/s.el

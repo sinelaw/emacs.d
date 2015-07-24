@@ -25,6 +25,7 @@
 (add-to-list 'load-path "~/.emacs.d/helm-git-grep")
 (add-to-list 'load-path "~/.emacs.d/helm-proc")
 (add-to-list 'load-path "~/.emacs.d/emacs-async")
+(add-to-list 'load-path "~/.emacs.d/s.el")
 
 (setq woman-show-log nil)
 
