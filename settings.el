@@ -21,9 +21,12 @@
 (setq grep-find-command "git grep --no-color -n -e ")
 (setq grep-find-history '("find . -type f -print0 | xargs -0 -e grep -nH --color=never -e "))
 
-(let ((cabal-bin (concat (getenv "HOME") "/.cabal/bin")))
+(let ((cabal-bin (concat (getenv "HOME") "/.cabal/bin"))
+      (ghc-path "/opt/ghc/7.10.2/bin"))
   (setenv "PATH" (concat cabal-bin ":" (getenv "PATH")))
-  (push cabal-bin exec-path))
+  (setenv "PATH" (concat ghc-path ":" (getenv "PATH")))
+  (push cabal-bin exec-path)
+  (push ghc-path exec-path))
 
 (defun set-term ()
   (insert "export TERM=vt100")
