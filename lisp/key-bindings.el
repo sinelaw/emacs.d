@@ -12,7 +12,7 @@
 ;(global-set-key [(control b)] 'ido-switch-buffer)
 ;(global-set-key [(control ? )] 'ido-switch-buffer)
 (global-set-key [(control b)] 'helm-buffers-list)
-(global-set-key [(control x) (control f)] 'helm-find-files)
+(global-set-key [(control x) (control f)] 'ido-find-file)
 
 (global-set-key [(meta g)] 'goto-line)
 
