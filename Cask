@@ -11,7 +11,6 @@
 (depends-on "dash")
 (depends-on "drag-stuff")
 (depends-on "eclim")
-(depends-on "elpa")
 (depends-on "emacs-async")
 (depends-on "emacs-eclim")
 (depends-on "exec-path-from-shell")

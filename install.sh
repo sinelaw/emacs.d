@@ -2,10 +2,12 @@
 git submodule update --init
 sudo apt-get install texinfo
 #  ./auto-complete - make doesn't work
-for d in ./magit ./helm ./git-gutter-plus ./git-modes ./haskell-mode ./flycheck
+for d in ./helm 
 do
   echo "Making: $d"
   (cd $d && make || exit 1)
 done
 
+test -d ~/.cask || (cd cask && ./go)
+cask --verbose
 
