@@ -4,7 +4,7 @@
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/git-gutter-plus")
 (add-to-list 'load-path "~/.emacs.d/emacs-eclim")
 (add-to-list 'load-path "~/.emacs.d/helm")
@@ -29,7 +29,7 @@
 (require 'eclimd)
 (global-eclim-mode)
 
-(setq custom-file "~/.emacs.d/my-custom.el")
+(setq custom-file "~/.emacs.d/lisp/my-custom.el")
 (setq-default truncate-lines t)
 
 (setq compile-command "buildsome --disable-color -j8")
@@ -55,7 +55,7 @@
 
 ;; TODO: add the ido find -name/-iname fix for wide-find-file
 
-(require 'git-rebase-mode)
+;(require 'git-rebase-mode)
 
 (require 'indent-region)
 (require 'uniquify)
