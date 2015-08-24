@@ -1,31 +1,15 @@
 ;;; package --- Summary
 ;;; Commentary:
 ;;; Code:
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+
 (add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'load-path "~/.emacs.d/dash.el")
-(add-to-list 'load-path "~/.emacs.d/haskell-mode")
-(add-to-list 'load-path "~/.emacs.d/auto-install")
-(add-to-list 'load-path "~/.emacs.d/flycheck")
-(add-to-list 'load-path "~/.emacs.d/dash")
-(add-to-list 'load-path "~/.emacs.d/undo-tree")
-(add-to-list 'load-path "/usr/share/emacs/site-lisp/python-mode")
-;(add-to-list 'load-path "~/.emacs.d/rtags/src")
 (add-to-list 'load-path "~/.emacs.d/git-gutter-plus")
-(add-to-list 'load-path "~/.emacs.d/column-enforce-mode")
-(add-to-list 'load-path "~/.emacs.d/git-modes")
-(add-to-list 'load-path "~/.emacs.d/magit")
-(add-to-list 'load-path "~/.emacs.d/smooth-scrolling")
-(add-to-list 'load-path "~/.emacs.d/hindent/elisp")
-;(add-to-list 'load-path "~/.emacs.d/smex")
-(add-to-list 'load-path "~/.emacs.d/git-timemachine")
 (add-to-list 'load-path "~/.emacs.d/emacs-eclim")
-;; (add-to-list 'load-path "~/.emacs.d/auto-complete")
 (add-to-list 'load-path "~/.emacs.d/helm")
 (add-to-list 'load-path "~/.emacs.d/helm-ls-git")
 (add-to-list 'load-path "~/.emacs.d/helm-git-grep")
-(add-to-list 'load-path "~/.emacs.d/helm-proc")
-(add-to-list 'load-path "~/.emacs.d/emacs-async")
-(add-to-list 'load-path "~/.emacs.d/s.el")
 
 (setq woman-show-log nil)
 

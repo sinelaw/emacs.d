@@ -1,69 +1,15 @@
-[submodule "undo-tree"]
-	path = undo-tree
-	url = git@github.com:emacsmirror/undo-tree.git
-[submodule "flycheck"]
-	path = flycheck
-	url = git@github.com:flycheck/flycheck.git
-[submodule "git-modes"]
-	path = git-modes
-	url = git@github.com:magit/git-modes.git
-[submodule "haskell-mode"]
-	path = haskell-mode
-	url = git@github.com:haskell/haskell-mode.git
-[submodule "magit"]
-	path = magit
-	url = git@github.com:magit/magit.git
-[submodule "dash"]
-	path = dash
-	url = git@github.com:magnars/dash.el.git
-[submodule "git-gutter-plus"]
-	path = git-gutter-plus
-	url = git@github.com:nonsequitur/git-gutter-plus.git
-[submodule "column-enforce-mode"]
-	path = column-enforce-mode
-	url = git@github.com:jordonbiondo/column-enforce-mode.git
-[submodule "smooth-scrolling"]
-	path = smooth-scrolling
-	url = git@github.com:aspiers/smooth-scrolling.git
-[submodule "hindent"]
-	path = hindent
-	url = git@github.com:chrisdone/hindent.git
-[submodule "smex"]
-	path = smex
-	url = https://github.com/nonsequitur/smex.git
-[submodule "haskell-docs"]
-	path = haskell-docs
-	url = https://github.com/chrisdone/haskell-docs.git
-[submodule "ghci-ng"]
-	path = ghci-ng
-	url = https://github.com/chrisdone/ghci-ng.git
-[submodule "auto-complete"]
-	path = auto-complete
-	url = https://github.com/auto-complete/auto-complete.git
-[submodule "git-timemachine"]
-	path = git-timemachine
-	url = git@github.com:pidu/git-timemachine.git
 [submodule "emacs-eclim"]
 	path = emacs-eclim
 	url = https://github.com/ElastiLotem/emacs-eclim
-[submodule "eclim"]
-	path = eclim
-	url = https://github.com/ervandew/eclim.git
 [submodule "helm"]
 	path = helm
 	url = https://github.com/Peaker/helm.git
-[submodule "emacs-async"]
-	path = emacs-async
-	url = git@github.com:jwiegley/emacs-async.git
 [submodule "helm-ls-git"]
 	path = helm-ls-git
 	url = git@github.com:Peaker/helm-ls-git.git
 [submodule "helm-git-grep"]
 	path = helm-git-grep
 	url = git@github.com:Peaker/helm-git-grep.git
-[submodule "helm-proc"]
-	path = helm-proc
-	url = git@github.com:markus1189/helm-proc.git
-[submodule "s.el"]
-	path = s.el
-	url = https://github.com/magnars/s.el
+[submodule "cask"]
+	path = cask
+	url = git@github.com:cask/cask.git
