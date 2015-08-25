@@ -22,9 +22,11 @@
 (setq grep-find-history '("find . -type f -print0 | xargs -0 -e grep -nH --color=never -e "))
 
 (let ((cabal-bin (concat (getenv "HOME") "/.cabal/bin"))
-      (ghc-path "/opt/ghc/7.10.2/bin"))
+      (ghc-path "/opt/ghc/7.10.2/bin")
+      (local-bin (concat (getenv "HOME") "/.local/bin")))
   (setenv "PATH" (concat cabal-bin ":" (getenv "PATH")))
   (setenv "PATH" (concat ghc-path ":" (getenv "PATH")))
+  (setenv "PATH" (concat local-bin ":" (getenv "PATH")))
   (push cabal-bin exec-path)
   (push ghc-path exec-path))
 
