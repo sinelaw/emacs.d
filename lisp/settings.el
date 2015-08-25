@@ -21,6 +21,13 @@
 (setq grep-find-command "git grep --no-color -n -e ")
 (setq grep-find-history '("find . -type f -print0 | xargs -0 -e grep -nH --color=never -e "))
 
+(ignore-errors
+  (require 'ansi-color)
+  (defun my-colorize-compilation-buffer ()
+    (when (eq major-mode 'compilation-mode)
+      (ansi-color-apply-on-region compilation-filter-start (point-max))))
+  (add-hook 'compilation-filter-hook 'my-colorize-compilation-buffer))
+
 (let ((cabal-bin (concat (getenv "HOME") "/.cabal/bin"))
       (ghc-path "/opt/ghc/7.10.2/bin")
       (local-bin (concat (getenv "HOME") "/.local/bin")))
