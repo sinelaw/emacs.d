@@ -24,6 +24,7 @@
  '(gdb-non-stop-setting nil)
  '(git-gutter+-disabled-modes (quote (haskell-mode)))
  '(global-git-gutter+-mode t)
+ '(global-whitespace-mode t)
  '(global-whitespace-mode nil)
  '(haskell-complete-module-preferred (quote ("Data.ByteString" "Data.ByteString.Lazy" "Data.Conduit" "Data.Function" "Data.List" "Data.Map" "Data.Maybe" "Data.Monoid" "Data.Ord")))
  '(haskell-indent-spaces 4)
@@ -92,6 +93,7 @@
  '(uniquify-separator "/")
  '(uniquify-strip-common-suffix nil)
  '(version-control (quote never))
+ '(whitespace-action (quote (auto-cleanup)))
  '(whitespace-style (quote (trailing tabs))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
