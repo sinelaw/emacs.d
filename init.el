@@ -15,8 +15,6 @@
 
 ;; (require 'auto-complete)
 
-(require 'nurumacs)
-(setq nurumacs-map nil)
 
 (require 'recentf)
 (recentf-mode 1)
