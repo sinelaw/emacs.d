@@ -26,6 +26,10 @@
 
 (require 'eclimd)
 (global-eclim-mode)
+(require 'company)
+(require 'company-emacs-eclim)
+(company-emacs-eclim-setup)
+(global-company-mode t)
 
 (setq custom-file "~/.emacs.d/lisp/my-custom.el")
 (setq-default truncate-lines t)

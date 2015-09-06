@@ -3,30 +3,45 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector ["black" "red" "green" "yellow" "blue" "magenta" "cyan" "white"])
+ '(ansi-color-names-vector
+   ["black" "red" "green" "yellow" "blue" "magenta" "cyan" "white"])
  '(c-basic-offset 8)
  '(c-macro-prompt-flag t)
  '(case-fold-search t)
- '(completion-ignored-extensions (quote (".hi" ".p_hi" ".dyn_hi" ".i_hi" ".p_o" ".dyn_o" ".i_o" ".o" "~" ".bin" ".lbin" ".so" ".a" ".ln" ".blg" ".bbl" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo")))
+ '(completion-ignored-extensions
+   (quote
+    (".hi" ".p_hi" ".dyn_hi" ".i_hi" ".p_o" ".dyn_o" ".i_o" ".o" "~" ".bin" ".lbin" ".so" ".a" ".ln" ".blg" ".bbl" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo")))
  '(dabbrev-case-distinction t)
  '(dabbrev-case-fold-search nil)
- '(dired-omit-extensions (quote (".o" ".hi" ".p_hi" ".p_o" ".i_o" ".i_hi" ".dyn_o" ".dyn_hi" "~" ".bin" ".lbin" ".so" ".a" ".ln" ".blg" ".bbl" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo" ".idx" ".lof" ".lot" ".glo" ".blg" ".bbl" ".cp" ".cps" ".fn" ".fns" ".ky" ".kys" ".pg" ".pgs" ".tp" ".tps" ".vr" ".vrs")))
+ '(dired-omit-extensions
+   (quote
+    (".o" ".hi" ".p_hi" ".p_o" ".i_o" ".i_hi" ".dyn_o" ".dyn_hi" "~" ".bin" ".lbin" ".so" ".a" ".ln" ".blg" ".bbl" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo" ".idx" ".lof" ".lot" ".glo" ".blg" ".bbl" ".cp" ".cps" ".fn" ".fns" ".ky" ".kys" ".pg" ".pgs" ".tp" ".tps" ".vr" ".vrs")))
  '(dired-recursive-copies (quote always))
  '(dired-recursive-deletes (quote top))
+ '(eclim-eclipse-dirs
+   (quote
+    ("~/Downloads/eclipse" "/Applications/eclipse" "/usr/lib/eclipse" "/usr/local/lib/eclipse" "/usr/share/eclipse")))
+ '(eclim-executable "~/Downloads/eclipse/eclim")
  '(enable-recursive-minibuffers t)
- '(flycheck-checkers (quote (ada-gnat asciidoc make-based-checker cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint d-dmd elixir emacs-lisp emacs-lisp-checkdoc erlang eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck haml handlebars haskell-ghc haskell-hlint html-tidy javascript-jshint javascript-eslint javascript-gjslint json-jsonlint less lua make perl perl-perlcritic php php-phpmd php-phpcs puppet-parser puppet-lint python-flake8 python-pylint racket rst rst-sphinx ruby-rubocop ruby-rubylint ruby ruby-jruby rust sass scala scala-scalastyle scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim tex-chktex tex-lacheck texinfo verilog-verilator xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby)))
- '(flycheck-disabled-checkers (quote (c/c++-cppcheck c/c++-gcc c/c++-clang python-pylint)))
+ '(flycheck-checkers
+   (quote
+    (ada-gnat asciidoc make-based-checker cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint d-dmd elixir emacs-lisp emacs-lisp-checkdoc erlang eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck haml handlebars haskell-ghc haskell-hlint html-tidy javascript-jshint javascript-eslint javascript-gjslint json-jsonlint less lua make perl perl-perlcritic php php-phpmd php-phpcs puppet-parser puppet-lint python-flake8 python-pylint racket rst rst-sphinx ruby-rubocop ruby-rubylint ruby ruby-jruby rust sass scala scala-scalastyle scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim tex-chktex tex-lacheck texinfo verilog-verilator xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby)))
+ '(flycheck-disabled-checkers
+   (quote
+    (c/c++-cppcheck c/c++-gcc c/c++-clang python-pylint)))
  '(flycheck-display-errors-delay 0)
  '(flycheck-display-errors-function (quote flycheck-display-error-messages))
  '(flymake-gui-warnings-enabled nil)
  '(flymake-no-changes-timeout 2)
  '(flymake-start-syntax-check-on-find-file nil)
  '(gdb-non-stop-setting nil)
+ '(git-commit-summary-max-length 72)
  '(git-gutter+-disabled-modes (quote (haskell-mode)))
  '(global-git-gutter+-mode t)
  '(global-whitespace-mode t)
- '(global-whitespace-mode nil)
- '(haskell-complete-module-preferred (quote ("Data.ByteString" "Data.ByteString.Lazy" "Data.Conduit" "Data.Function" "Data.List" "Data.Map" "Data.Maybe" "Data.Monoid" "Data.Ord")))
+ '(haskell-complete-module-preferred
+   (quote
+    ("Data.ByteString" "Data.ByteString.Lazy" "Data.Conduit" "Data.Function" "Data.List" "Data.Map" "Data.Maybe" "Data.Monoid" "Data.Ord")))
  '(haskell-indent-spaces 4)
  '(haskell-indentation-ifte-offset 4)
  '(haskell-indentation-layout-offset 4)
@@ -49,12 +64,14 @@
  '(haskell-process-suggest-hayoo-imports nil)
  '(haskell-process-suggest-hoogle-imports t)
  '(haskell-process-suggest-remove-import-lines t)
- '(haskell-process-type (quote ghci))
+ '(haskell-process-type (quote stack-ghci))
  '(haskell-process-use-presentation-mode t)
  '(haskell-stylish-on-save nil)
  '(haskell-tags-on-save nil)
  '(helm-autoresize-mode t)
- '(helm-boring-file-regexp-list (quote ("\\.hi$" "\\.o$" "\\.p_o$" "\\.p_hi$" "\\.i_hi$" "\\.i_o$" "\\.dyn_o$" "\\.dyn_hi$" "~$" "\\.bin$" "\\.lbin$" "\\.so$" "\\.a$" "\\.ln$" "\\.blg$" "\\.bbl$" "\\.elc$" "\\.lof$" "\\.glo$" "\\.idx$" "\\.lot$" "\\.svn$" "\\.hg$" "\\.git$" "\\.bzr$" "CVS$" "_darcs$" "_MTN$" "\\.fmt$" "\\.tfm$" "\\.class$" "\\.fas$" "\\.lib$" "\\.mem$" "\\.x86f$" "\\.sparcf$" "\\.dfsl$" "\\.pfsl$" "\\.d64fsl$" "\\.p64fsl$" "\\.lx64fsl$" "\\.lx32fsl$" "\\.dx64fsl$" "\\.dx32fsl$" "\\.fx64fsl$" "\\.fx32fsl$" "\\.sx64fsl$" "\\.sx32fsl$" "\\.wx64fsl$" "\\.wx32fsl$" "\\.fasl$" "\\.ufsl$" "\\.fsl$" "\\.dxl$" "\\.lo$" "\\.la$" "\\.gmo$" "\\.mo$" "\\.toc$" "\\.aux$" "\\.cp$" "\\.fn$" "\\.ky$" "\\.pg$" "\\.tp$" "\\.vr$" "\\.cps$" "\\.fns$" "\\.kys$" "\\.pgs$" "\\.tps$" "\\.vrs$" "\\.pyc$" "\\.pyo$" "/\\.$" "/\\.\\.$")))
+ '(helm-boring-file-regexp-list
+   (quote
+    ("\\.hi$" "\\.o$" "\\.p_o$" "\\.p_hi$" "\\.i_hi$" "\\.i_o$" "\\.dyn_o$" "\\.dyn_hi$" "~$" "\\.bin$" "\\.lbin$" "\\.so$" "\\.a$" "\\.ln$" "\\.blg$" "\\.bbl$" "\\.elc$" "\\.lof$" "\\.glo$" "\\.idx$" "\\.lot$" "\\.svn$" "\\.hg$" "\\.git$" "\\.bzr$" "CVS$" "_darcs$" "_MTN$" "\\.fmt$" "\\.tfm$" "\\.class$" "\\.fas$" "\\.lib$" "\\.mem$" "\\.x86f$" "\\.sparcf$" "\\.dfsl$" "\\.pfsl$" "\\.d64fsl$" "\\.p64fsl$" "\\.lx64fsl$" "\\.lx32fsl$" "\\.dx64fsl$" "\\.dx32fsl$" "\\.fx64fsl$" "\\.fx32fsl$" "\\.sx64fsl$" "\\.sx32fsl$" "\\.wx64fsl$" "\\.wx32fsl$" "\\.fasl$" "\\.ufsl$" "\\.fsl$" "\\.dxl$" "\\.lo$" "\\.la$" "\\.gmo$" "\\.mo$" "\\.toc$" "\\.aux$" "\\.cp$" "\\.fn$" "\\.ky$" "\\.pg$" "\\.tp$" "\\.vr$" "\\.cps$" "\\.fns$" "\\.kys$" "\\.pgs$" "\\.tps$" "\\.vrs$" "\\.pyc$" "\\.pyo$" "/\\.$" "/\\.\\.$")))
  '(helm-command-prefix-key "s-x")
  '(helm-ff-skip-boring-files t)
  '(hindent-style "chris-done")
@@ -63,8 +80,12 @@
  '(ido-enabled nil t)
  '(ido-everywhere t)
  '(ido-file-extensions-order (quote (".py" ".c" "Makefile" ".s" ".S")))
- '(ido-ignore-buffers (quote ("\\` " "\\*Messages\\*" "\\*Ediff Registry\\*" "_flymake" "*Flycheck error messages*")))
- '(ido-ignore-files (quote ("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\.pyc$" "\\.o$" "\\.hi$" "\\.dyn_hi$" "\\.dyn_o$" "\\.git/" "\\.gitignore$" "^AUTO_" "_flymake")))
+ '(ido-ignore-buffers
+   (quote
+    ("\\` " "\\*Messages\\*" "\\*Ediff Registry\\*" "_flymake" "*Flycheck error messages*")))
+ '(ido-ignore-files
+   (quote
+    ("\\`CVS/" "\\`#" "\\`.#" "\\`\\.\\./" "\\`\\./" "\\.pyc$" "\\.o$" "\\.hi$" "\\.dyn_hi$" "\\.dyn_o$" "\\.git/" "\\.gitignore$" "^AUTO_" "_flymake")))
  '(ido-max-prospects 60)
  '(ido-max-window-height 10)
  '(ido-max-work-directory-list 30)
@@ -79,7 +100,21 @@
  '(rtags-completions-enabled t)
  '(rtags-path "~/.emacs.d")
  '(rtags-rc-log-enabled t)
- '(safe-local-variable-values (quote ((include-header-prefix . "ELFS__") (eval setq dir-local-curdir (file-name-directory (let ((d (dir-locals-find-file "."))) (if (stringp d) d (car d))))) (hindent-style . "chris-done") (hindent-style . "gibiansky") (hindent-style . "johan-tibell"))))
+ '(safe-local-variable-values
+   (quote
+    ((include-header-prefix . "ELFS__")
+     (eval setq dir-local-curdir
+           (file-name-directory
+            (let
+                ((d
+                  (dir-locals-find-file ".")))
+              (if
+                  (stringp d)
+                  d
+                (car d)))))
+     (hindent-style . "chris-done")
+     (hindent-style . "gibiansky")
+     (hindent-style . "johan-tibell"))))
  '(session-use-package t nil (session))
  '(shell-input-autoexpand t)
  '(show-paren-style (quote expression))
