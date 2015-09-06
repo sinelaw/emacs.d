@@ -14,7 +14,7 @@
 (setq woman-show-log nil)
 
 ;; (require 'auto-complete)
-
+(global-linum-mode)
 
 (require 'recentf)
 (recentf-mode 1)
