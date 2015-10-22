@@ -30,6 +30,7 @@
 (depends-on "helm-git-grep")
 (depends-on "helm-ls-git")
 (depends-on "helm-proc")
+(depends-on "highlight-symbol")
 (depends-on "hindent")
 (depends-on "htmlize")
 (depends-on "idle-highlight-mode")
