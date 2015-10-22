@@ -45,6 +45,7 @@
 (depends-on "s")
 (depends-on "smartparens")
 (depends-on "smex")
+(depends-on "sml-mode")
 (depends-on "smooth-scrolling")
 (depends-on "undo-tree")
 (depends-on "use-package")
