@@ -10,11 +10,14 @@
 (add-to-list 'load-path "~/.emacs.d/helm")
 (add-to-list 'load-path "~/.emacs.d/helm-ls-git")
 (add-to-list 'load-path "~/.emacs.d/helm-git-grep")
+(add-to-list 'load-path "~/.emacs.d/c-comment-edit-mode")
 
 (setq woman-show-log nil)
 
 ;; (require 'auto-complete)
 (global-linum-mode)
+
+(require 'c-comment-edit)
 
 (require 'recentf)
 (recentf-mode 1)

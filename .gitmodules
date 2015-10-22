@@ -13,3 +13,6 @@
 [submodule "cask"]
 	path = cask
 	url = git@github.com:cask/cask.git
+[submodule "c-comment-edit-mode"]
+	path = c-comment-edit-mode
+	url = https://github.com/jaalto/emacs-epackage--c-comment-edit-mode.git
