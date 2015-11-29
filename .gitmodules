@@ -16,3 +16,6 @@
 [submodule "c-comment-edit-mode"]
 	path = c-comment-edit-mode
 	url = https://github.com/jaalto/emacs-epackage--c-comment-edit-mode.git
+[submodule "hlint-refactor-mode"]
+	path = hlint-refactor-mode
+	url = git@github.com:mpickering/hlint-refactor-mode.git

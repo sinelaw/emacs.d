@@ -144,3 +144,5 @@
 (server-start)
 
 ;;; init.el ends here
+(setq load-path (cons "/home/noam/.emacs.d/hlint-refactor-mode" load-path))
+(require 'hlint-refactor-mode)
