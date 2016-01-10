@@ -178,7 +178,7 @@
 
 (defun add-review-comment ()
   (interactive)
-  (insert (concat comment-start "REVIEW(Eyal): "))
+  (insert (concat comment-start "REVIEW(Noam): "))
   (save-excursion (insert comment-end)))
 (global-set-key [(meta shift ?r)] 'add-review-comment)
 
