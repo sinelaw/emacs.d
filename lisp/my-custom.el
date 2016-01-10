@@ -104,7 +104,8 @@
  '(rtags-rc-log-enabled t)
  '(safe-local-variable-values
    (quote
-    ((include-header-prefix . "ELFS__")
+    ((c-indent-level . 4)
+     (include-header-prefix . "ELFS__")
      (eval setq dir-local-curdir
            (file-name-directory
             (let
