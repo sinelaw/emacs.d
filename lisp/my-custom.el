@@ -39,6 +39,7 @@
  '(git-gutter+-disabled-modes (quote (haskell-mode)))
  '(global-git-gutter+-mode t)
  '(global-whitespace-mode t)
+ '(graphviz-dot-view-command "display %s")
  '(haskell-complete-module-preferred
    (quote
     ("Data.ByteString" "Data.ByteString.Lazy" "Data.Conduit" "Data.Function" "Data.List" "Data.Map" "Data.Maybe" "Data.Monoid" "Data.Ord")))

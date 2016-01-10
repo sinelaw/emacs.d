@@ -24,6 +24,7 @@
 (depends-on "git-gutter+")
 (depends-on "git-modes")
 (depends-on "git-timemachine")
+(depends-on "graphviz-dot-mode")
 (depends-on "haskell-docs")
 (depends-on "haskell-mode")
 (depends-on "helm")
