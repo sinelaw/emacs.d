@@ -5,7 +5,7 @@
 (require 'haskell-mode)
 (require 'hindent)
 (require 'haskell-process)
-(require 'haskell-simple-indent)
+;(require 'haskell-indentation-mode)
 (require 'haskell-interactive-mode)
 (require 'haskell-font-lock)
 
