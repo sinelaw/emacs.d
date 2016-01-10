@@ -1,4 +1,4 @@
-
+
 ;; Requirements
 
 (require 'haskell)
@@ -9,7 +9,7 @@
 (require 'haskell-interactive-mode)
 (require 'haskell-font-lock)
 
-
+
 ;; Functions
 
 ;;; Code:
@@ -117,7 +117,7 @@
 ;;                (haskell-process-do-try-type ident))))
 ;;       (call-interactively 'shm/space))))
 
-
+
 ;; Mode settings
 
 (custom-set-variables
@@ -155,7 +155,7 @@
      "Data.Monoid"
      "Data.Ord")))
 
-
+
 ;; Add hook
 
 ;(add-hook 'haskell-mode-hook 'structured-haskell-mode)
@@ -168,7 +168,7 @@
 ;;   (add-hook 'after-save-hook 'haskell-process-load-or-reload :local t))
 ;; (add-hook 'haskell-mode-hook 'load-after-save)
 
-
+
 ;; Keybindings
 
 (define-key interactive-haskell-mode-map [f5] 'haskell-process-load-or-reload)
