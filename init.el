@@ -116,6 +116,7 @@
 
 (delete-selection-mode t)
 (global-auto-revert-mode 1)
+(column-number-mode t)
 
 ;; (global-flycheck-mode)
 
