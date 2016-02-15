@@ -54,6 +54,7 @@
  '(haskell-interactive-mode-eval-mode (quote haskell-mode))
  '(haskell-interactive-mode-eval-pretty nil)
  '(haskell-interactive-mode-include-file-name nil)
+ '(haskell-interactive-popup-errors nil)
  '(haskell-notify-p t)
  '(haskell-process-args-cabal-repl (quote ("--ghc-option=-ferror-spans" "--with-ghc=ghci-ng")))
  '(haskell-process-args-ghci (quote ("-ferror-spans")))

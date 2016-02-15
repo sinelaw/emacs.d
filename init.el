@@ -145,5 +145,17 @@
 (server-start)
 
 ;;; init.el ends here
+(put 'scroll-left 'disabled nil)
+
+;; xrefactory
+;; (defvar xref-current-project nil) ;; can be also "my_project_name"
+;; (defvar xref-key-binding 'local) ;; can be also 'local or 'none
+;; (setq load-path (cons "/home/noam/Downloads/xref/emacs" load-path))
+;; (setq exec-path (cons "/home/noam/Downloads/xref" exec-path))
+;; (load "xrefactory")
+
 (setq load-path (cons "/home/noam/.emacs.d/hlint-refactor-mode" load-path))
 (require 'hlint-refactor-mode)
+
+(require 'table)
+(add-hook 'text-mode-hook 'table-recognize)

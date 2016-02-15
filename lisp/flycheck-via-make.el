@@ -18,10 +18,10 @@
             ": warning: " (message) line-end)
    (error line-start (file-name) ":" line ":" column
           ": " (or "fatal error" "error") ": " (message) line-end))
-  :error-filter
-  (lambda (errors)
-    (flycheck-fold-include-errors
-     (flycheck-sanitize-errors errors) "In file included from"))
+  ;; :error-filter
+  ;; (lambda (errors)
+  ;;   (flycheck-fold-include-errors
+  ;;    (flycheck-sanitize-errors errors) "In file included from"))
   :modes (c-mode c++-mode))
 
 
