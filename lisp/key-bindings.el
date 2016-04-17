@@ -182,12 +182,6 @@
   (save-excursion (insert comment-end)))
 (global-set-key [(meta shift ?r)] 'add-review-comment)
 
-(defun add-response-comment ()
-  (interactive)
-  (insert (concat comment-start "Eyal: "))
-  (save-excursion (insert comment-end)))
-(global-set-key [(meta shift ?w)] 'add-response-comment)
-
 (require 'git-timemachine)
 (global-set-key [(super ?g) ?g] 'git-timemachine)
 (global-set-key [(super ?g) ?s] 'magit-status)
