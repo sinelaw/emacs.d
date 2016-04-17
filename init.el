@@ -17,6 +17,7 @@
 ;; (require 'auto-complete)
 (global-linum-mode)
 
+(require 'tls)
 (require 'c-comment-edit)
 
 (require 'recentf)
