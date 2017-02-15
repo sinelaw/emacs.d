@@ -113,6 +113,10 @@
  '(magit-log-remove-graph-args (quote ("--follow" "--grep" "-G" "-S" "-L" "--reverse")))
  '(org-support-shift-select t)
  '(p4-use-p4config-exclusively t)
+ '(projectile-globally-ignored-directories
+   (quote
+    (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "Buildsome.mk.db")))
+ '(projectile-tags-backend (quote ggtags))
  '(pylint-options (quote ("--reports=n" "--output-format=parseable" "-E")))
  '(rtags-completions-enabled t)
  '(rtags-path "~/.emacs.d")

@@ -117,12 +117,12 @@
 (global-auto-revert-mode 1)
 (column-number-mode t)
 
-;; (global-flycheck-mode)
+; (global-flycheck-mode)
 
 (require 'column-enforce-mode)
 (add-hook 'prog-mode-hook 'column-enforce-mode)
 
-;; (add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook 'global-flycheck-mode)
 
 ;; (require 'smooth-scrolling)
 ;; (setq smooth-scroll-margin 5)
