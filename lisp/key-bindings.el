@@ -143,7 +143,7 @@
          (o-name (concat "\"out/" (file-name-base file-name) "." ext "\"")))
     (unless (string-match "\\(.*\\)\\.c" file-name) (error "Not a .c file"))
     (let ((compilation-buffer-name-function (lambda (dummy) (concat "*" o-name "*"))))
-      (compile (concat "buildsome --disable-color -j8 " o-name)))))
+      (compile (concat "~/bs --without nvme_sg --disable-color -j8 " o-name)))))
 
 (defun buildsome-o ()
   (interactive)
@@ -171,7 +171,7 @@
 (global-set-key [(control c) (control f3)] 'c-make-module)
 
 (global-set-key [(control c) h t] 'tags-ext-make-tags)
-(global-set-key [(meta ?.)] 'tags-ext-find-tag-at-point)
+;; (global-set-key [(meta ?.)] 'tags-ext-find-tag-at-point)
 
 (global-set-key [(control meta f)] 'find-function)
 (global-set-key [(control x) (control meta f)] 'find-function-on-key)

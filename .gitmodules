@@ -19,3 +19,6 @@
 [submodule "hlint-refactor-mode"]
 	path = hlint-refactor-mode
 	url = git@github.com:mpickering/hlint-refactor-mode.git
+[submodule "ebnf-mode"]
+	path = ebnf-mode
+	url = git@github.com:jeramey/ebnf-mode.git

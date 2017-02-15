@@ -1,3 +1,4 @@
+(setq exec-path (append exec-path '("~/.local/bin")))
 ;;; package --- Summary
 ;;; Commentary:
 ;;; Code:
@@ -11,6 +12,7 @@
 (add-to-list 'load-path "~/.emacs.d/helm-ls-git")
 (add-to-list 'load-path "~/.emacs.d/helm-git-grep")
 (add-to-list 'load-path "~/.emacs.d/c-comment-edit-mode")
+(add-to-list 'load-path "~/.emacs.d/ebnf-mode")
 
 (setq woman-show-log nil)
 
@@ -30,10 +32,6 @@
 
 (require 'eclimd)
 (global-eclim-mode)
-(require 'company)
-(require 'company-emacs-eclim)
-(company-emacs-eclim-setup)
-(global-company-mode t)
 
 (setq custom-file "~/.emacs.d/lisp/my-custom.el")
 (setq-default truncate-lines t)
@@ -126,13 +124,17 @@
 
 ;; (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(require 'smooth-scrolling)
-(setq smooth-scroll-margin 5)
-(setq scroll-conservatively 9999
-      scroll-preserve-screen-position t)
+;; (require 'smooth-scrolling)
+;; (setq smooth-scroll-margin 5)
+;; (setq scroll-conservatively 9999
+;;       scroll-preserve-screen-position t)
 
-(load "haskell-mode-autoloads.el")
-(load "chris-done-haskell.el")
+(package-install 'intero)
+(add-hook 'haskell-mode-hook 'intero-mode)
+
+;; (load "haskell-mode-autoloads.el")
+;; (load "chris-done-haskell.el")
+
 
 (provide 'init)
 
@@ -160,3 +162,31 @@
 
 (require 'table)
 (add-hook 'text-mode-hook 'table-recognize)
+
+;; (add-hook 'haskell-mode-hook 'intero-mode)
+(path-headerline-mode +1)
+
+;; HaRE
+;; (add-to-list 'load-path "~/.stack/global/.stack-work/install/x86_64-linux/lts-4.0/7.10.3/share/x86_64-linux-ghc-7.10.3/HaRe-0.8.2.1/elisp")
+;; (require 'hare)
+;; (autoload 'hare-init "hare" nil t)
+
+;; ;; Haskell main editing mode key bindings.
+;; (defun haskell-hook ()
+;;   ;(lambda nil (ghc-init))
+;;   (ghc-init)
+;;   (hare-init)
+;; )
+
+(require 'ebnf-mode)
+
+(require 'mmm-auto)
+(require 'mmm-mako)
+(setq mmm-global-mode 'maybe)
+(mmm-add-mode-ext-class 'c-mode "\\.t.c\\'" 'mako)
+(mmm-add-mode-ext-class 'c-mode "\\.t.h\\'" 'mako)
+
+(require 'ansi-color)
+(defun display-ansi-colors ()
+  (interactive)
+  (ansi-color-apply-on-region (point-min) (point-max)))

@@ -12,6 +12,9 @@
  '(completion-ignored-extensions
    (quote
     (".hi" ".p_hi" ".dyn_hi" ".i_hi" ".p_o" ".dyn_o" ".i_o" ".o" "~" ".bin" ".lbin" ".so" ".a" ".ln" ".blg" ".bbl" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo")))
+ '(custom-safe-themes
+   (quote
+    ("b7e38c2b835e8b46cb51beb222ec85310a2b63135d4abbca44ecf533706fa6aa" default)))
  '(dabbrev-case-distinction t)
  '(dabbrev-case-fold-search nil)
  '(dired-omit-extensions
@@ -24,6 +27,7 @@
     ("~/Downloads/eclipse" "/Applications/eclipse" "/usr/lib/eclipse" "/usr/local/lib/eclipse" "/usr/share/eclipse")))
  '(eclim-executable "~/Downloads/eclipse/eclim")
  '(enable-recursive-minibuffers t)
+ '(erc-nick "sinelaw")
  '(flycheck-checkers
    (quote
     (ada-gnat asciidoc make-based-checker cfengine chef-foodcritic coffee coffee-coffeelint coq css-csslint d-dmd elixir emacs-lisp emacs-lisp-checkdoc erlang eruby-erubis fortran-gfortran go-gofmt go-golint go-vet go-build go-test go-errcheck haml handlebars haskell-ghc haskell-hlint html-tidy javascript-jshint javascript-eslint javascript-gjslint json-jsonlint less lua make perl perl-perlcritic php php-phpmd php-phpcs puppet-parser puppet-lint python-flake8 python-pylint racket rst rst-sphinx ruby-rubocop ruby-rubylint ruby ruby-jruby rust sass scala scala-scalastyle scss sh-bash sh-posix-dash sh-posix-bash sh-zsh sh-shellcheck slim tex-chktex tex-lacheck texinfo verilog-verilator xml-xmlstarlet xml-xmllint yaml-jsyaml yaml-ruby)))
@@ -32,6 +36,7 @@
     (c/c++-cppcheck c/c++-gcc c/c++-clang python-pylint)))
  '(flycheck-display-errors-delay 0)
  '(flycheck-display-errors-function (quote flycheck-display-error-messages))
+ '(flycheck-shellcheck-excluded-warnings (quote ("SC2086" "SC2046")))
  '(flymake-gui-warnings-enabled nil)
  '(flymake-no-changes-timeout 2)
  '(flymake-start-syntax-check-on-find-file nil)
@@ -96,16 +101,29 @@
  '(ido-mode (quote both) nil (ido))
  '(indent-tabs-mode nil)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(intero-debug nil)
+ '(intero-package-version "0.1.16")
+ '(intero-repl-no-build t)
+ '(intero-repl-no-load t)
  '(isearch-lazy-highlight t)
  '(lazy-highlight-initial-delay 0)
  '(magit-diff-options (quote ("--function-context")))
+ '(magit-log-arguments (quote ("-n256" "--graph" "--decorate")))
+ '(magit-log-auto-more t)
+ '(magit-log-remove-graph-args (quote ("--follow" "--grep" "-G" "-S" "-L" "--reverse")))
+ '(org-support-shift-select t)
  '(p4-use-p4config-exclusively t)
+ '(pylint-options (quote ("--reports=n" "--output-format=parseable" "-E")))
  '(rtags-completions-enabled t)
  '(rtags-path "~/.emacs.d")
  '(rtags-rc-log-enabled t)
  '(safe-local-variable-values
    (quote
-    ((c-indent-level . 4)
+    ((org-latex-hyperref-template)
+     (haskell-process-args-ghci "ghci" "--with-ghc" "ghci-ng")
+     (haskell-process-path-ghci . "stack")
+     (haskell-process-type . ghci)
+     (c-indent-level . 4)
      (include-header-prefix . "ELFS__")
      (eval setq dir-local-curdir
            (file-name-directory
@@ -123,6 +141,8 @@
  '(shell-input-autoexpand t)
  '(show-paren-style (quote expression))
  '(show-trailing-whitespace t)
+ '(sublimity-map-size 0)
+ '(sublimity-scroll-drift-length 5)
  '(tags-case-fold-search nil)
  '(tags-revert-without-query t)
  '(twisted-dev-confirm-run-all t)
