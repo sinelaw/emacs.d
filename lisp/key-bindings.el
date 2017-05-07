@@ -192,11 +192,11 @@
 (global-set-key [(meta ?p)] 'git-gutter+-previous-hunk)
 (global-set-key [(meta ?n)] 'git-gutter+-next-hunk)
 
-(global-set-key [f7] 'helm-find)
-(global-set-key [(shift f6)] 'helm-git-grep)
-(global-set-key [f6] 'helm-ls-git-ls)
+;(global-set-key [f7] 'helm-find)
+;(global-set-key [(shift f6)] 'helm-git-grep)
+;(global-set-key [f6] 'helm-ls-git-ls)
 (global-set-key [(control f6)] 'switch-to-other-buffer)
-(global-set-key (kbd "M-x") 'helm-M-x)
+;(global-set-key (kbd "M-x") 'helm-M-x)
 ;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 (global-set-key (kbd "C-s-<left>") 'windmove-left)
@@ -210,16 +210,16 @@
   (if (file-directory-p (helm-get-selection))
       (helm-execute-persistent-action)
     (apply 'helm-maybe-exit-minibuffer args)))
-(define-key helm-find-files-map [return] 'helm-find-files-navigate-forward)
+;(define-key helm-find-files-map [return] 'helm-find-files-navigate-forward)
 
 (defun helm-find-files-navigate-back (&rest args)
   (interactive)
   (if (= (length helm-pattern) (length (helm-find-files-initial-input)))
       (helm-find-files-up-one-level 1)
     (apply 'helm-ff-delete-char-backward args)))
-(define-key helm-find-files-map [backspace] 'helm-find-files-navigate-back)
+;(define-key helm-find-files-map [backspace] 'helm-find-files-navigate-back)
 
-(define-key helm-find-files-map [(control ?d)] (lambda () (interactive) (helm-select-nth-action 1)))
+;(define-key helm-find-files-map [(control ?d)] (lambda () (interactive) (helm-select-nth-action 1)))
 
 (global-set-key [C-mouse-4] 'text-scale-increase)
 (global-set-key [C-mouse-5] 'text-scale-decrease)

@@ -8,9 +8,9 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/git-gutter-plus")
 (add-to-list 'load-path "~/.emacs.d/emacs-eclim")
-(add-to-list 'load-path "~/.emacs.d/helm")
-(add-to-list 'load-path "~/.emacs.d/helm-ls-git")
-(add-to-list 'load-path "~/.emacs.d/helm-git-grep")
+;(add-to-list 'load-path "~/.emacs.d/helm")
+;(add-to-list 'load-path "~/.emacs.d/helm-ls-git")
+;(add-to-list 'load-path "~/.emacs.d/helm-git-grep")
 (add-to-list 'load-path "~/.emacs.d/c-comment-edit-mode")
 (add-to-list 'load-path "~/.emacs.d/ebnf-mode")
 
@@ -39,22 +39,22 @@
 (setq compile-command "buildsome --disable-color -j8")
 (setq compile-history (list "buildsome --disable-color -j8" "cabal build" "cabal install" "make"))
 
-(require 'helm-config)
-(require 'helm-ls-git)
-(require 'helm-git-grep)
-(require 'helm-proc)
+;(require 'helm-config)
+;(require 'helm-ls-git)
+;(require 'helm-git-grep)
+;(require 'helm-proc)
 
 ;(require 'smex)
 ;(smex-initialize)
 
-(require 'hindent)
+;(require 'hindent)
 
 (require 'flycheck-via-make) ; before my-custom which refers to it
 
 (require 'ctx-switch-face)
 
-(require 'magit)
-(require 'git-gutter+)
+;(require 'magit)
+;(require 'git-gutter+)
 (require 'my-custom)
 
 ;; TODO: add the ido find -name/-iname fix for wide-find-file
@@ -129,8 +129,8 @@
 ;; (setq scroll-conservatively 9999
 ;;       scroll-preserve-screen-position t)
 
-(package-install 'intero)
-(add-hook 'haskell-mode-hook 'intero-mode)
+;(package-install 'intero)
+;(add-hook 'haskell-mode-hook 'intero-mode)
 
 ;; (load "haskell-mode-autoloads.el")
 ;; (load "chris-done-haskell.el")
@@ -157,14 +157,14 @@
 ;; (setq exec-path (cons "/home/noam/Downloads/xref" exec-path))
 ;; (load "xrefactory")
 
-(setq load-path (cons "/home/noam/.emacs.d/hlint-refactor-mode" load-path))
-(require 'hlint-refactor-mode)
+;(setq load-path (cons "/home/noam/.emacs.d/hlint-refactor-mode" load-path))
+;(require 'hlint-refactor-mode)
 
 (require 'table)
 (add-hook 'text-mode-hook 'table-recognize)
 
 ;; (add-hook 'haskell-mode-hook 'intero-mode)
-(path-headerline-mode +1)
+;;(path-headerline-mode +1)
 
 ;; HaRE
 ;; (add-to-list 'load-path "~/.stack/global/.stack-work/install/x86_64-linux/lts-4.0/7.10.3/share/x86_64-linux-ghc-7.10.3/HaRe-0.8.2.1/elisp")
@@ -180,11 +180,11 @@
 
 (require 'ebnf-mode)
 
-(require 'mmm-auto)
-(require 'mmm-mako)
-(setq mmm-global-mode 'maybe)
-(mmm-add-mode-ext-class 'c-mode "\\.t.c\\'" 'mako)
-(mmm-add-mode-ext-class 'c-mode "\\.t.h\\'" 'mako)
+;;(require 'mmm-auto)
+;;(require 'mmm-mako)
+;;(setq mmm-global-mode 'maybe)
+;;(mmm-add-mode-ext-class 'c-mode "\\.t.c\\'" 'mako)
+;;(mmm-add-mode-ext-class 'c-mode "\\.t.h\\'" 'mako)
 
 (require 'ansi-color)
 (defun display-ansi-colors ()
