@@ -8,9 +8,9 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/git-gutter-plus")
 (add-to-list 'load-path "~/.emacs.d/emacs-eclim")
-;(add-to-list 'load-path "~/.emacs.d/helm")
-;(add-to-list 'load-path "~/.emacs.d/helm-ls-git")
-;(add-to-list 'load-path "~/.emacs.d/helm-git-grep")
+(add-to-list 'load-path "~/.emacs.d/helm")
+(add-to-list 'load-path "~/.emacs.d/helm-ls-git")
+(add-to-list 'load-path "~/.emacs.d/helm-git-grep")
 (add-to-list 'load-path "~/.emacs.d/c-comment-edit-mode")
 (add-to-list 'load-path "~/.emacs.d/ebnf-mode")
 
@@ -39,10 +39,11 @@
 (setq compile-command "buildsome --disable-color -j8")
 (setq compile-history (list "buildsome --disable-color -j8" "cabal build" "cabal install" "make"))
 
-;(require 'helm-config)
-;(require 'helm-ls-git)
-;(require 'helm-git-grep)
-;(require 'helm-proc)
+(require 'helm-config)
+(require 'helm-ls-git)
+(require 'helm-git-grep)
+(require 'helm-proc)
+(require 'helm)
 
 ;(require 'smex)
 ;(smex-initialize)
@@ -53,8 +54,8 @@
 
 (require 'ctx-switch-face)
 
-;(require 'magit)
-;(require 'git-gutter+)
+(require 'magit)
+(require 'git-gutter+)
 (require 'my-custom)
 
 ;; TODO: add the ido find -name/-iname fix for wide-find-file
@@ -75,8 +76,8 @@
 (require 'tags-ext)
 (require 'keymaps)
 
-(require 'haskell-indentation)
-(require 'haskell-font-lock)
+;(require 'haskell-indentation)
+;(require 'haskell-font-lock)
 (require 'haskell-mode)
 (add-to-list 'auto-mode-alist '("\\.hs\\'" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.hsc\\'" . haskell-mode))
