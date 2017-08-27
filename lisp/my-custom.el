@@ -12,9 +12,10 @@
  '(completion-ignored-extensions
    (quote
     (".hi" ".p_hi" ".dyn_hi" ".i_hi" ".p_o" ".dyn_o" ".i_o" ".o" "~" ".bin" ".lbin" ".so" ".a" ".ln" ".blg" ".bbl" ".elc" ".lof" ".glo" ".idx" ".lot" ".svn/" ".hg/" ".git/" ".bzr/" "CVS/" "_darcs/" "_MTN/" ".fmt" ".tfm" ".class" ".fas" ".lib" ".mem" ".x86f" ".sparcf" ".dfsl" ".pfsl" ".d64fsl" ".p64fsl" ".lx64fsl" ".lx32fsl" ".dx64fsl" ".dx32fsl" ".fx64fsl" ".fx32fsl" ".sx64fsl" ".sx32fsl" ".wx64fsl" ".wx32fsl" ".fasl" ".ufsl" ".fsl" ".dxl" ".lo" ".la" ".gmo" ".mo" ".toc" ".aux" ".cp" ".fn" ".ky" ".pg" ".tp" ".vr" ".cps" ".fns" ".kys" ".pgs" ".tps" ".vrs" ".pyc" ".pyo")))
+ '(custom-enabled-themes (quote (noam)))
  '(custom-safe-themes
    (quote
-    ("b7e38c2b835e8b46cb51beb222ec85310a2b63135d4abbca44ecf533706fa6aa" default)))
+    ("a7ec95b635971ec026850902a271138a39605a2ee5cc37cfdb3896e69517d855" default)))
  '(dabbrev-case-distinction t)
  '(dabbrev-case-fold-search nil)
  '(dired-omit-extensions
@@ -113,6 +114,9 @@
  '(magit-log-remove-graph-args (quote ("--follow" "--grep" "-G" "-S" "-L" "--reverse")))
  '(org-support-shift-select t)
  '(p4-use-p4config-exclusively t)
+ '(package-selected-packages
+   (quote
+    (yasnippet web-mode use-package undo-tree toml-mode smooth-scrolling sml-mode smex smartparens session racer pylint projectile prodigy popwin pallet nyan-mode multiple-cursors mmm-mako markdown-mode+ magit intero idle-highlight-mode htmlize hindent highlight-symbol helm-proc helm-ls-git helm-git-grep graphviz-dot-mode git-timemachine git-gutter+ flycheck-haskell flycheck-cask expand-region exec-path-from-shell drag-stuff company-cabal column-enforce-mode auto-install auto-complete anything)))
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "Buildsome.mk.db")))

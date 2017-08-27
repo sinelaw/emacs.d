@@ -143,7 +143,7 @@
          (o-name (concat "\"out/" (file-name-base file-name) "." ext "\"")))
     (unless (string-match "\\(.*\\)\\.c" file-name) (error "Not a .c file"))
     (let ((compilation-buffer-name-function (lambda (dummy) (concat "*" o-name "*"))))
-      (compile (concat "~/bs --without nvme_sg --disable-color -j8 " o-name)))))
+      (compile (concat "~/bs --disable-color -j8 --overwrite --with clang --with clang_plugins " o-name)))))
 
 (defun buildsome-o ()
   (interactive)

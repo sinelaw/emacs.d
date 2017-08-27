@@ -1,3 +1,4 @@
+;;; noam --- stuff
 (setq exec-path (append exec-path '("~/.local/bin")))
 ;;; package --- Summary
 ;;; Commentary:
@@ -14,7 +15,7 @@
 (add-to-list 'load-path "~/.emacs.d/c-comment-edit-mode")
 (add-to-list 'load-path "~/.emacs.d/ebnf-mode")
 
-(setq woman-show-log nil)
+;(setq woman-show-log nil)
 
 ;; (require 'auto-complete)
 (global-linum-mode)
@@ -36,8 +37,8 @@
 (setq custom-file "~/.emacs.d/lisp/my-custom.el")
 (setq-default truncate-lines t)
 
-(setq compile-command "buildsome --disable-color -j8")
-(setq compile-history (list "buildsome --disable-color -j8" "cabal build" "cabal install" "make"))
+(setq compile-command "~/bs --disable-color -j8 --overwrite --with clang --with clang_plugins")
+(setq compile-history (list "~/bs --disable-color -j8 --overwrite --with clang --with clang_plugins" "cabal build" "cabal install" "make"))
 
 (require 'helm-config)
 (require 'helm-ls-git)
@@ -58,6 +59,8 @@
 (require 'my-custom)
 
 ;; TODO: add the ido find -name/-iname fix for wide-find-file
+
+(setq ido-mode t)
 
 ;(require 'git-rebase-mode)
 
@@ -139,7 +142,7 @@
 (provide 'init)
 
 ; new gdb is incredibly annoying, use old gud-gdb instead
-(fset 'gdb 'gud-gdb)
+;(fset 'gdb 'gud-gdb)
 
 (setq inhibit-splash-screen t)
 
@@ -164,7 +167,7 @@
 (add-hook 'text-mode-hook 'table-recognize)
 
 ;; (add-hook 'haskell-mode-hook 'intero-mode)
-(path-headerline-mode +1)
+;;(path-headerline-mode +1)
 
 ;; HaRE
 ;; (add-to-list 'load-path "~/.stack/global/.stack-work/install/x86_64-linux/lts-4.0/7.10.3/share/x86_64-linux-ghc-7.10.3/HaRe-0.8.2.1/elisp")
@@ -190,3 +193,11 @@
 (defun display-ansi-colors ()
   (interactive)
   (ansi-color-apply-on-region (point-min) (point-max)))
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
+
+(require 'rust-mode)
+(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)
