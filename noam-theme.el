@@ -3,7 +3,6 @@
 
 (custom-theme-set-faces
  'noam
- '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
  '(cursor ((t (:background "#fce94f"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((((type w32)) (:font "-outline-Arial-normal-normal-normal-sans-*-*-*-*-p-*-iso8859-1")) (t (:family "Sans Serif"))))
@@ -11,7 +10,7 @@
  '(minibuffer-prompt ((t (:foreground "#b4fa70"))))
  '(highlight ((t (:foreground "#2e3436" :background "#edd400"))))
  '(region ((t (:background "#555753"))))
- '(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
+ '(shadow ((t (:foreground "grey50"))))
  '(secondary-selection ((t (:background "#204a87"))))
  '(trailing-whitespace ((t (:background "#a40000"))))
  '(font-lock-builtin-face ((t (:foreground "#e090d7"))))
@@ -45,6 +44,7 @@
  '(lazy-highlight ((t (:background "#8f5902"))))
  '(match ((((class color) (min-colors 88) (background light)) (:background "yellow1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
  '(next-error ((t (:inherit (region)))))
- '(query-replace ((t (:inherit (isearch))))))
+ '(query-replace ((t (:inherit (isearch)))))
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "PfEd" :family "DejaVu Sans Mono")))))
 
 (provide-theme 'noam)
