@@ -1,9 +1,9 @@
 (deftheme noam
-  "Created 2017-08-27.")
+  "Created 2017-08-29.")
 
 (custom-theme-set-faces
  'noam
- '(default ((t (:inherit nil :stipple nil :background "#111111" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :stipple nil :background "#000000" :foreground "#eeeeec" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
  '(cursor ((t (:background "#fce94f"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((((type w32)) (:font "-outline-Arial-normal-normal-normal-sans-*-*-*-*-p-*-iso8859-1")) (t (:family "Sans Serif"))))

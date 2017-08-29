@@ -1,2 +1,0 @@
-#!/bin/bash
-LD_LIBRARY_PATH=/usr/lib/llvm-3.4/lib /usr/local/bin/rdm $@
