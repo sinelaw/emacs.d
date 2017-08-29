@@ -1,0 +1,6 @@
+*.elc
+*~
+smex-items
+.cask/
+elpa/
+.session
