@@ -8,12 +8,14 @@
 
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'load-path "~/.emacs.d/lisp")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(column-enforce-column 120)
  '(column-number-mode t)
  '(custom-enabled-themes (quote (noam)))
  '(custom-safe-themes
@@ -50,6 +52,8 @@
 (delete-selection-mode t)
 (toggle-truncate-lines 1)
 
+(require 'ctx-switch-face)
+
 (setq line-number-mode t)
 (setq column-number-mode t)
 
@@ -66,6 +70,7 @@
 ;; Code editing
 (bind-key* [(meta ?3)] 'comment-region)
 (bind-key* [(meta ?4)] 'uncomment-region)
+(bind-key* (kbd "M-g") 'goto-line)
 
 ;; Undo
 (bind-key* (kbd "C-z") 'undo-tree-undo)

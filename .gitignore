@@ -4,3 +4,5 @@ smex-items
 .cask/
 elpa/
 .session
+bookmarks
+ido.last
