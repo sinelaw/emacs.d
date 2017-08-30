@@ -28,7 +28,7 @@
  '(line-number-mode nil)
  '(package-selected-packages
    (quote
-    (company-rtags flycheck-rtags use-package helm-git-grep rtags jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
+    (git-gutter+ git-timemachine sokoban company-rtags flycheck-rtags use-package helm-git-grep rtags jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
  '(rtags-path "~/repos/thirdparty/rtags")
  '(safe-local-variable-values
    (quote
