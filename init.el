@@ -7,6 +7,10 @@
 ;;; Code:
 
 (package-initialize)
+
+(setenv "PATH" (concat (getenv "PATH") ":~/.local/bin"))
+(setq exec-path (append exec-path '("~/.local/bin")))
+
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'load-path "~/.emacs.d/lisp")
 
@@ -21,14 +25,18 @@
  '(custom-safe-themes
    (quote
     ("211841eceb96c69e0fd69c6d89c4104f877190bf4ae4a3d6a6ad1a94629f54e6" "4fbb52182a1af390d59b23669b5397df29c29a8cdd02cd6ec5fc859143c47001" default)))
- '(flycheck-clang-args (quote ("-DCOMPILE_UNIT=\"foo.c\"")))
+ '(flycheck-clang-args
+   (quote
+    ("-DCOMPILE_UNIT=\"foo.c\"" "-Xclang" "-load" "-Xclang" "/home/noam/repos/elfs-system/elfs/tools/clang_plugins/clang_plugins.so" "-Xclang" "-add-plugin" "-Xclang" "include_cleaner" "-Xclang" "-add-plugin" "-Xclang" "enums_conversion" "-Xclang" "-add-plugin" "-Xclang" "warn_unused_result")))
  '(flycheck-clang-include-path (quote ("/home/noam/repos/elfs-system/elfs")))
+ '(flycheck-clang-language-standard "gnu11")
+ '(global-git-gutter-mode t)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
  '(line-number-mode nil)
  '(package-selected-packages
    (quote
-    (git-gutter+ git-timemachine sokoban company-rtags flycheck-rtags use-package helm-git-grep rtags jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
+    (string-inflection groovy-mode gl-conf-mode git-gutter+ git-timemachine sokoban company-rtags use-package helm-git-grep rtags jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
  '(rtags-path "~/repos/thirdparty/rtags")
  '(safe-local-variable-values
    (quote
@@ -37,7 +45,8 @@
  '(sublimity-mode t)
  '(undo-tree-auto-save-history t)
  '(undo-tree-incompatible-major-modes (quote (term-mode magit-log)))
- '(undo-tree-visualizer-diff t))
+ '(undo-tree-visualizer-diff t)
+ '(whitespace-action (quote (auto-cleanup))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -113,6 +122,8 @@
   (interactive)
   (let ((compilation-buffer-name-function (lambda (mode) "*exec resolve-trivial-conflicts*")))
     (compile "resolve-trivial-conflicts -d")))
+
+(server-start)
 
 (provide 'init)
 ;;; init.el ends here
