@@ -28,6 +28,9 @@
  '(flycheck-clang-args
    (quote
     ("-DCOMPILE_UNIT=\"foo.c\"" "-Xclang" "-load" "-Xclang" "/home/noam/repos/elfs-system/elfs/tools/clang_plugins/clang_plugins.so" "-Xclang" "-add-plugin" "-Xclang" "include_cleaner" "-Xclang" "-add-plugin" "-Xclang" "enums_conversion" "-Xclang" "-add-plugin" "-Xclang" "warn_unused_result")))
+ '(flycheck-clang-definitions
+   (quote
+    ("_GNU_SOURCE" "_FILE_OFFSET_BITS=64" "FUSE_USE_VERSION=22")))
  '(flycheck-clang-include-path (quote ("/home/noam/repos/elfs-system/elfs")))
  '(flycheck-clang-language-standard "gnu11")
  '(global-git-gutter-mode t)
@@ -75,6 +78,9 @@
 
 (bind-key* [(meta up)] (defun scroll-down-one () (interactive) (scroll-down 1)))
 (bind-key* [(meta down)] (defun scroll-up-one () (interactive) (scroll-up 1)))
+
+(bind-key* [(meta left)] 'backward-sexp)
+(bind-key* [(meta right)] 'forward-sexp)
 
 ;; Code editing
 (bind-key* [(meta ?3)] 'comment-region)
