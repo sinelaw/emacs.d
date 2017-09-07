@@ -1,4 +1,3 @@
-
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -30,10 +29,11 @@
     ("-DCOMPILE_UNIT=\"foo.c\"" "-Xclang" "-load" "-Xclang" "/home/noam/repos/elfs-system/elfs/tools/clang_plugins/clang_plugins.so" "-Xclang" "-add-plugin" "-Xclang" "include_cleaner" "-Xclang" "-add-plugin" "-Xclang" "enums_conversion" "-Xclang" "-add-plugin" "-Xclang" "warn_unused_result")))
  '(flycheck-clang-definitions
    (quote
-    ("_GNU_SOURCE" "_FILE_OFFSET_BITS=64" "FUSE_USE_VERSION=22")))
+    ("_GNU_SOURCE" "_FILE_OFFSET_BITS=64" "FUSE_USE_VERSION=22" "CLANG_PLUGIN_ENUMS_CONVERSION")))
  '(flycheck-clang-include-path (quote ("/home/noam/repos/elfs-system/elfs")))
  '(flycheck-clang-language-standard "gnu11")
  '(global-git-gutter-mode t)
+ '(global-whitespace-mode t)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
  '(line-number-mode nil)
@@ -49,7 +49,8 @@
  '(undo-tree-auto-save-history t)
  '(undo-tree-incompatible-major-modes (quote (term-mode magit-log)))
  '(undo-tree-visualizer-diff t)
- '(whitespace-action (quote (auto-cleanup))))
+ '(whitespace-action (quote (auto-cleanup)))
+ '(whitespace-style (quote (face trailing tabs empty tab-mark))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -127,7 +128,9 @@
 (defun resolve-trivial-conflicts ()
   (interactive)
   (let ((compilation-buffer-name-function (lambda (mode) "*exec resolve-trivial-conflicts*")))
-    (compile "resolve-trivial-conflicts -d")))
+    (compile "resolve-trivial-conflicts -C -d")))
+
+(bind-key* (kbd "M-S-<f10>") 'resolve-trivial-conflicts)
 
 (server-start)
 
