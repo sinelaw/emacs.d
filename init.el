@@ -63,6 +63,11 @@
  ;; If there is more than one, they won't work right.
  '(linum ((t (:inherit (shadow default))))))
 
+;; Avoid security issue with enriched text (https://lists.gnu.org/archive/html/emacs-devel/2017-09/msg00211.html)
+(eval-after-load "enriched"
+  '(defun enriched-decode-display-prop (start end &optional param)
+     (list start end)))
+
 (global-undo-tree-mode)
 (global-flycheck-mode)
 (global-jump-tree-mode)
