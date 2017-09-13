@@ -37,14 +37,19 @@
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
  '(line-number-mode nil)
+ '(magit-git-global-arguments
+   (quote
+    ("--no-pager" "--literal-pathspecs" "-c" "core.preloadindex=true" "-c" "log.showSignature=false")))
+ '(magit-process-connection-type nil)
  '(package-selected-packages
    (quote
-    (string-inflection groovy-mode gl-conf-mode git-gutter+ git-timemachine sokoban company-rtags use-package helm-git-grep rtags jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
+    (markdown-mode lua-mode string-inflection groovy-mode gl-conf-mode git-gutter+ git-timemachine sokoban company-rtags use-package helm-git-grep rtags jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
  '(rtags-path "~/repos/thirdparty/rtags")
  '(safe-local-variable-values
    (quote
     ((include-header-prefix . "ELFS__")
      (c-indent-level . 4))))
+ '(show-paren-mode t)
  '(sublimity-mode t)
  '(undo-tree-auto-save-history t)
  '(undo-tree-incompatible-major-modes (quote (term-mode magit-log)))
@@ -64,6 +69,8 @@
 (global-linum-mode)
 (delete-selection-mode t)
 (toggle-truncate-lines 1)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
 
 (require 'ctx-switch-face)
 
