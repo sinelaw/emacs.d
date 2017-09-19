@@ -35,12 +35,16 @@
    (quote
     ("/home/noam/repos/elfs-system/elfs" "/usr/lib/llvm-3.7/include/")))
  '(flycheck-clang-language-standard "gnu11")
- '(flycheck-clang-warnings (quote ("all" "extra" "no-unused")))
+ '(flycheck-clang-warnings (quote ("all" "extra" "conversion")))
+ '(flycheck-error-list-minimum-level nil)
+ '(flycheck-navigation-minimum-level (quote warning))
  '(flycheck-temp-prefix "#flycheck")
+ '(gdb-many-windows t)
  '(global-git-gutter-mode t)
  '(global-whitespace-mode t)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
+ '(line-number-display-limit 10000000)
  '(line-number-mode nil)
  '(magit-git-global-arguments
    (quote
@@ -57,6 +61,8 @@
      (c-indent-level . 4))))
  '(show-paren-mode t)
  '(sublimity-mode t)
+ '(truncate-lines t)
+ '(truncate-partial-width-windows nil)
  '(undo-tree-auto-save-history t)
  '(undo-tree-incompatible-major-modes (quote (term-mode magit-log)))
  '(undo-tree-visualizer-diff t)
