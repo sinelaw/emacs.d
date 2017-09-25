@@ -35,7 +35,7 @@
    (quote
     ("/home/noam/repos/elfs-system/elfs" "/usr/lib/llvm-3.7/include/")))
  '(flycheck-clang-language-standard "gnu11")
- '(flycheck-clang-warnings (quote ("all" "extra" "conversion")))
+ '(flycheck-clang-warnings (quote ("all" "extra" "conversion" "switch-enum")))
  '(flycheck-error-list-minimum-level nil)
  '(flycheck-navigation-minimum-level (quote warning))
  '(flycheck-temp-prefix "#flycheck")
@@ -81,6 +81,7 @@
   '(defun enriched-decode-display-prop (start end &optional param)
      (list start end)))
 
+(setq-default indent-tabs-mode nil)
 (global-undo-tree-mode)
 (global-flycheck-mode)
 (global-jump-tree-mode)
