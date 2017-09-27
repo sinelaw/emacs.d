@@ -33,7 +33,7 @@
     ("_GNU_SOURCE" "_FILE_OFFSET_BITS=64" "FUSE_USE_VERSION=22" "CLANG_PLUGIN_ENUMS_CONVERSION")))
  '(flycheck-clang-include-path
    (quote
-    ("/home/noam/repos/elfs-system/elfs" "/usr/lib/llvm-3.7/include/")))
+    ("/home/noam/repos/elfs-system/elfs" "/usr/lib/llvm-3.7/include/" "/home/noam/repos/elfs-system/elfs/smb/VS/src/linux/" "/home/noam/repos/elfs-system/elfs/smb/VS/src/nq/")))
  '(flycheck-clang-language-standard "gnu11")
  '(flycheck-clang-warnings (quote ("all" "extra" "conversion" "switch-enum")))
  '(flycheck-error-list-minimum-level nil)
@@ -46,6 +46,7 @@
  '(ido-mode (quote both) nil (ido))
  '(line-number-display-limit 10000000)
  '(line-number-mode nil)
+ '(magit-auto-revert-mode nil)
  '(magit-git-global-arguments
    (quote
     ("--no-pager" "--literal-pathspecs" "-c" "core.preloadindex=true" "-c" "log.showSignature=false")))
