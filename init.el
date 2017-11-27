@@ -24,10 +24,11 @@
  '(custom-safe-themes
    (quote
     ("211841eceb96c69e0fd69c6d89c4104f877190bf4ae4a3d6a6ad1a94629f54e6" "4fbb52182a1af390d59b23669b5397df29c29a8cdd02cd6ec5fc859143c47001" default)))
+ '(dabbrev-case-fold-search nil)
  '(fast-but-imprecise-scrolling t)
  '(flycheck-clang-args
    (quote
-    ("-DCOMPILE_UNIT=\"foo.c\"" "-Xclang" "-load" "-Xclang" "/home/noam/repos/elfs-system/elfs/tools/clang_plugins/clang_plugins.so" "-Xclang" "-add-plugin" "-Xclang" "include_cleaner" "-Xclang" "-add-plugin" "-Xclang" "enums_conversion" "-Xclang" "-add-plugin" "-Xclang" "warn_unused_result" "-Xclang" "-add-plugin" "-Xclang" "large_assignment" "-Xclang" "-plugin-arg-large_assignment" "-Xclang" "127")))
+    ("-DCOMPILE_UNIT=\"foo.c\"" "-Xclang" "-load" "-Xclang" "/home/noam/repos/elfs-system/elfs/tools/clang_plugins/clang_plugins.so" "-Xclang" "-add-plugin" "-Xclang" "include_cleaner" "-Xclang" "-add-plugin" "-Xclang" "enums_conversion" "-Xclang" "-add-plugin" "-Xclang" "warn_unused_result" "-Xclang" "-add-plugin" "-Xclang" "large_assignment" "-Xclang" "-plugin-arg-large_assignment" "-Xclang" "600")))
  '(flycheck-clang-definitions
    (quote
     ("_GNU_SOURCE" "_FILE_OFFSET_BITS=64" "FUSE_USE_VERSION=22" "CLANG_PLUGIN_ENUMS_CONVERSION")))
@@ -38,6 +39,7 @@
  '(flycheck-clang-warnings (quote ("all" "extra" "conversion" "switch-enum")))
  '(flycheck-error-list-minimum-level nil)
  '(flycheck-navigation-minimum-level (quote warning))
+ '(flycheck-python-pylint-executable "~/.local/bin/pylint")
  '(flycheck-temp-prefix "#flycheck")
  '(gdb-many-windows t)
  '(global-git-gutter-mode t)
@@ -47,10 +49,20 @@
  '(line-number-display-limit 10000000)
  '(line-number-mode nil)
  '(magit-auto-revert-mode nil)
+ '(magit-bisect-show-graph t)
  '(magit-git-global-arguments
    (quote
     ("--no-pager" "--literal-pathspecs" "-c" "core.preloadindex=true" "-c" "log.showSignature=false")))
  '(magit-process-connection-type nil)
+ '(magit-repository-directories
+   (quote
+    (("/home/noam/repos" . 1)
+     ("/home/noam/repos/elastifile" . 1)
+     ("/home/noam/repos/thirdparty" . 1))))
+ '(magit-revision-sections-hook
+   (quote
+    (magit-insert-revision-headers magit-insert-revision-message magit-insert-revision-diff magit-insert-xref-buttons)))
+ '(magit-status-expand-stashes nil)
  '(package-selected-packages
    (quote
     (cov markdown-mode flycheck-tip outline-magic path-headerline-mode lua-mode string-inflection groovy-mode gl-conf-mode git-gutter+ git-timemachine sokoban company-rtags use-package helm-git-grep jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
