@@ -25,6 +25,9 @@
    (quote
     ("211841eceb96c69e0fd69c6d89c4104f877190bf4ae4a3d6a6ad1a94629f54e6" "4fbb52182a1af390d59b23669b5397df29c29a8cdd02cd6ec5fc859143c47001" default)))
  '(dabbrev-case-fold-search nil)
+ '(dired-garbage-files-regexp
+   "\\(?:\\.\\(?:aux\\|bak\\|dvi\\|log\\|orig\\|rej\\|toc\\|~\\|pyc\\)\\)\\'")
+ '(dired-omit-files "^\\.?#\\|^\\.$\\$")
  '(fast-but-imprecise-scrolling t)
  '(flycheck-clang-args
    (quote
@@ -44,6 +47,7 @@
  '(gdb-many-windows t)
  '(global-git-gutter-mode t)
  '(global-whitespace-mode t)
+ '(haskell-indentation-left-offset 4)
  '(ido-everywhere t)
  '(ido-mode (quote both) nil (ido))
  '(line-number-display-limit 10000000)
@@ -61,11 +65,17 @@
      ("/home/noam/repos/thirdparty" . 1))))
  '(magit-revision-sections-hook
    (quote
-    (magit-insert-revision-headers magit-insert-revision-message magit-insert-revision-diff magit-insert-xref-buttons)))
+    (magit-insert-revision-message magit-insert-revision-diff magit-insert-xref-buttons)))
  '(magit-status-expand-stashes nil)
+ '(magit-status-headers-hook
+   (quote
+    (magit-insert-error-header magit-insert-diff-filter-header)))
+ '(magit-status-sections-hook
+   (quote
+    (magit-insert-status-headers magit-insert-merge-log magit-insert-rebase-sequence magit-insert-am-sequence magit-insert-sequencer-sequence magit-insert-bisect-output magit-insert-bisect-rest magit-insert-bisect-log magit-insert-untracked-files magit-insert-unstaged-changes magit-insert-staged-changes magit-insert-unpulled-from-upstream magit-insert-unpulled-from-pushremote magit-insert-unpushed-to-upstream-or-recent magit-insert-unpushed-to-pushremote)))
  '(package-selected-packages
    (quote
-    (cov markdown-mode flycheck-tip outline-magic path-headerline-mode lua-mode string-inflection groovy-mode gl-conf-mode git-gutter+ git-timemachine sokoban company-rtags use-package helm-git-grep jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
+    (typescript-mode bison-mode cov markdown-mode flycheck-tip outline-magic path-headerline-mode lua-mode string-inflection groovy-mode gl-conf-mode git-gutter+ git-timemachine sokoban company-rtags use-package helm-git-grep jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
  '(path-headerline-mode t)
  '(rtags-path "~/repos/thirdparty/rtags")
  '(safe-local-variable-values
@@ -113,6 +123,11 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (path-headerline-mode 1)
+
+(defun prevent-whitespace-mode-for-magit ()
+  (not (derived-mode-p 'magit-mode)))
+
+(add-function :before-while whitespace-enable-predicate 'prevent-whitespace-mode-for-magit)
 
 (defun activate-outline-minor-mode () (outline-minor-mode 1))
 (add-hook 'c-mode-hook 'activate-outline-minor-mode)
