@@ -20,7 +20,7 @@
  ;; If there is more than one, they won't work right.
  '(column-enforce-column 120)
  '(column-number-mode t)
- '(custom-enabled-themes (quote (noam)))
+ '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
     ("211841eceb96c69e0fd69c6d89c4104f877190bf4ae4a3d6a6ad1a94629f54e6" "4fbb52182a1af390d59b23669b5397df29c29a8cdd02cd6ec5fc859143c47001" default)))
@@ -31,13 +31,13 @@
  '(fast-but-imprecise-scrolling t)
  '(flycheck-clang-args
    (quote
-    ("-DCOMPILE_UNIT=\"foo.c\"" "-Xclang" "-load" "-Xclang" "/home/noam/repos/elfs-system/elfs/tools/clang_plugins/clang_plugins.so" "-Xclang" "-add-plugin" "-Xclang" "include_cleaner" "-Xclang" "-add-plugin" "-Xclang" "enums_conversion" "-Xclang" "-add-plugin" "-Xclang" "warn_unused_result" "-Xclang" "-add-plugin" "-Xclang" "large_assignment" "-Xclang" "-plugin-arg-large_assignment" "-Xclang" "600")))
+    ("-DCOMPILE_UNIT=\"foo.c\"" "-Xclang" "-load" "-Xclang" "/build/elfs-system/elfs/tools/clang_plugins/clang_plugins.so" "-Xclang" "-add-plugin" "-Xclang" "include_cleaner" "-Xclang" "-add-plugin" "-Xclang" "enums_conversion" "-Xclang" "-add-plugin" "-Xclang" "warn_unused_result" "-Xclang" "-add-plugin" "-Xclang" "large_assignment" "-Xclang" "-plugin-arg-large_assignment" "-Xclang" "600")))
  '(flycheck-clang-definitions
    (quote
     ("_GNU_SOURCE" "_FILE_OFFSET_BITS=64" "FUSE_USE_VERSION=22" "CLANG_PLUGIN_ENUMS_CONVERSION")))
  '(flycheck-clang-include-path
    (quote
-    ("/home/noam/repos/elfs-system/elfs" "/usr/lib/llvm-3.7/include/" "/home/noam/repos/elfs-system/elfs/smb/VS/src/linux/" "/home/noam/repos/elfs-system/elfs/smb/VS/src/nq/")))
+    ("/build/elfs-system/elfs" "/usr/lib/llvm-3.7/include/" "/build/elfs-system/elfs/smb/VS/src/linux/" "/build/elfs-system/elfs/smb/VS/src/nq/")))
  '(flycheck-clang-language-standard "gnu11")
  '(flycheck-clang-warnings (quote ("all" "extra" "conversion" "switch-enum")))
  '(flycheck-error-list-minimum-level nil)
@@ -52,6 +52,7 @@
  '(ido-mode (quote both) nil (ido))
  '(line-number-display-limit 10000000)
  '(line-number-mode nil)
+ '(linum-delay t)
  '(magit-auto-revert-mode nil)
  '(magit-bisect-show-graph t)
  '(magit-git-global-arguments
@@ -60,9 +61,9 @@
  '(magit-process-connection-type nil)
  '(magit-repository-directories
    (quote
-    (("/home/noam/repos" . 1)
-     ("/home/noam/repos/elastifile" . 1)
-     ("/home/noam/repos/thirdparty" . 1))))
+    (("/build" . 1)
+     ("/build/elastifile" . 1)
+     ("/build/thirdparty" . 1))))
  '(magit-revision-sections-hook
    (quote
     (magit-insert-revision-message magit-insert-revision-diff magit-insert-xref-buttons)))
@@ -77,7 +78,7 @@
    (quote
     (typescript-mode bison-mode cov markdown-mode flycheck-tip outline-magic path-headerline-mode lua-mode string-inflection groovy-mode gl-conf-mode git-gutter+ git-timemachine sokoban company-rtags use-package helm-git-grep jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
  '(path-headerline-mode t)
- '(rtags-path "~/repos/thirdparty/rtags")
+ '(rtags-path "~/rtags")
  '(safe-local-variable-values
    (quote
     ((haskell-process-args-ghci "ghci" "--with-ghc" "ghci-ng")
@@ -105,7 +106,19 @@
  '(cov-light-face ((t (:foreground "yellow"))))
  '(cov-med-face ((t (:foreground "dark orange"))))
  '(cov-none-face ((t (:foreground "red"))))
- '(linum ((t (:inherit (shadow default))))))
+ '(font-lock-function-name-face ((t (:foreground "#8888ff"))))
+ '(font-lock-warning-face ((t (:inherit nil :background "#330000"))))
+ '(linum ((t (:inherit (shadow default)))))
+ '(magit-diff-added-highlight ((t (:background "#cceecc" :foreground "#009900"))))
+ '(magit-diff-context-highlight ((t (:background "grey95" :foreground "grey30"))))
+ '(magit-diff-removed-highlight ((t (:background "#eecccc" :foreground "#990000"))))
+ '(magit-section-highlight ((t (:background "#333333"))))
+ '(smerge-base ((t (:background "#555511"))))
+ '(smerge-markers ((t (:background "#222222"))))
+ '(smerge-mine ((t (:background "color-94"))))
+ '(smerge-other ((t (:background "#115511"))))
+ '(smerge-refined-added ((t (:inherit smerge-refined-change :background "#229922"))))
+ '(smerge-refined-removed ((t (:inherit smerge-refined-change :background "color-95")))))
 
 ;; Avoid security issue with enriched text (https://lists.gnu.org/archive/html/emacs-devel/2017-09/msg00211.html)
 (eval-after-load "enriched"
@@ -141,6 +154,8 @@
 (column-enforce-n 120)
 (global-column-enforce-mode)
 
+(bind-key* (kbd "C-h") 'delete-backward-char)
+(bind-key* [select] 'end-of-line)
 (bind-key* (kbd "C-x C-f") 'ido-find-file)
 (bind-key* (kbd "C-b") 'ido-switch-buffer)
 (bind-key* (kbd "<C-tab>") 'other-window)
@@ -191,6 +206,8 @@
 ;; Multiple cursors
 (bind-key* (kbd "C->") 'mc/mark-next-like-this)
 (bind-key* (kbd "C-<") 'mc/mark-previous-like-this)
+(bind-key* [f7] 'mc/mark-next-like-this)
+(bind-key* [f8] 'mc/mark-previous-like-this)
 
 (bind-key* (kbd "<f3>") 'rtags-find-references-at-point)
 
