@@ -21,7 +21,7 @@
  '(c-basic-offset 4)
  '(column-enforce-column 120)
  '(column-number-mode t)
- '(custom-enabled-themes nil)
+ '(custom-enabled-themes (quote (noam)))
  '(custom-safe-themes
    (quote
     ("211841eceb96c69e0fd69c6d89c4104f877190bf4ae4a3d6a6ad1a94629f54e6" "4fbb52182a1af390d59b23669b5397df29c29a8cdd02cd6ec5fc859143c47001" default)))
