@@ -18,6 +18,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(c-basic-offset 4)
  '(column-enforce-column 120)
  '(column-number-mode t)
  '(custom-enabled-themes nil)
@@ -31,13 +32,13 @@
  '(fast-but-imprecise-scrolling t)
  '(flycheck-clang-args
    (quote
-    ("-DCOMPILE_UNIT=\"foo.c\"" "-Xclang" "-load" "-Xclang" "/build/elfs-system/elfs/tools/clang_plugins/clang_plugins.so" "-Xclang" "-add-plugin" "-Xclang" "include_cleaner" "-Xclang" "-add-plugin" "-Xclang" "enums_conversion" "-Xclang" "-add-plugin" "-Xclang" "warn_unused_result" "-Xclang" "-add-plugin" "-Xclang" "large_assignment" "-Xclang" "-plugin-arg-large_assignment" "-Xclang" "600")))
+    ("-DCOMPILE_UNIT=\"foo.c\"" "-Xclang" "-load" "-Xclang" "/home/noam/clang_plugins.so" "-Xclang" "-add-plugin" "-Xclang" "include_cleaner" "-Xclang" "-add-plugin" "-Xclang" "enums_conversion" "-Xclang" "-add-plugin" "-Xclang" "warn_unused_result" "-Xclang" "-add-plugin" "-Xclang" "large_assignment" "-Xclang" "-plugin-arg-large_assignment" "-Xclang" "600")))
  '(flycheck-clang-definitions
    (quote
     ("_GNU_SOURCE" "_FILE_OFFSET_BITS=64" "FUSE_USE_VERSION=22" "CLANG_PLUGIN_ENUMS_CONVERSION")))
  '(flycheck-clang-include-path
    (quote
-    ("/build/elfs-system/elfs" "/usr/lib/llvm-3.7/include/" "/build/elfs-system/elfs/smb/VS/src/linux/" "/build/elfs-system/elfs/smb/VS/src/nq/")))
+    ("/home/noam/repos/elfs-system/elfs" "/usr/lib/llvm-3.8/include/" "/home/noam/repos/elfs-system/elfs/smb/VS/src/linux/" "/home/noam/repos/elfs-system/elfs/smb/VS/src/nq/")))
  '(flycheck-clang-language-standard "gnu11")
  '(flycheck-clang-warnings (quote ("all" "extra" "conversion" "switch-enum")))
  '(flycheck-error-list-minimum-level nil)
@@ -53,6 +54,10 @@
  '(line-number-display-limit 10000000)
  '(line-number-mode nil)
  '(linum-delay t)
+ '(lsp-clangd-executable "/usr/bin/clangd-6.0")
+ '(lsp-print-io t)
+ '(lsp-project-whitelist (quote ("/home/noam/repos/elfs-system/elfs")))
+ '(lsp-response-timeout 100)
  '(magit-auto-revert-mode nil)
  '(magit-bisect-show-graph t)
  '(magit-git-global-arguments
@@ -76,7 +81,7 @@
     (magit-insert-status-headers magit-insert-merge-log magit-insert-rebase-sequence magit-insert-am-sequence magit-insert-sequencer-sequence magit-insert-bisect-output magit-insert-bisect-rest magit-insert-bisect-log magit-insert-untracked-files magit-insert-unstaged-changes magit-insert-staged-changes magit-insert-unpulled-from-upstream magit-insert-unpulled-from-pushremote magit-insert-unpushed-to-upstream-or-recent magit-insert-unpushed-to-pushremote)))
  '(package-selected-packages
    (quote
-    (typescript-mode bison-mode cov markdown-mode flycheck-tip outline-magic path-headerline-mode lua-mode string-inflection groovy-mode gl-conf-mode git-gutter+ git-timemachine sokoban company-rtags use-package helm-git-grep jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
+    (helm-cscope xcscope graphviz-dot-mode flycheck-clang-analyzer flycheck-clang-tidy flycheck-clangcheck lyrics lsp-clangd lsp-haskell lsp-html lsp-intellij lsp-java lsp-mode lsp-python lsp-ui mmm-mako mmm-mode typescript-mode bison-mode cov markdown-mode flycheck-tip outline-magic path-headerline-mode lua-mode string-inflection groovy-mode gl-conf-mode git-gutter+ git-timemachine sokoban company-rtags use-package helm-git-grep jump-tree column-enforce-mode undo-tree undohist multiple-cursors pylint go-mode helm helm-git helm-ls-git intero magit python-mode)))
  '(path-headerline-mode t)
  '(rtags-path "~/rtags")
  '(safe-local-variable-values
@@ -156,6 +161,13 @@
 
 (bind-key* (kbd "C-h") 'delete-backward-char)
 (bind-key* [select] 'end-of-line)
+;; lsp mode / clangd
+(with-eval-after-load 'lsp-mode
+  (require 'lsp-clangd)
+  (add-hook 'c-mode--hook #'lsp-clangd-c-enable)
+  (add-hook 'c++-mode-hook #'lsp-clangd-c++-enable)
+  (add-hook 'objc-mode-hook #'lsp-clangd-objc-enable))
+
 (bind-key* (kbd "C-x C-f") 'ido-find-file)
 (bind-key* (kbd "C-b") 'ido-switch-buffer)
 (bind-key* (kbd "<C-tab>") 'other-window)
@@ -192,7 +204,7 @@
 ;; Keyboard macros
 (bind-key* [f11] 'call-last-kbd-macro)
 
-(bind-key* (kbd "M-.") 'rtags-find-symbol-at-point)
+(bind-key* (kbd "M-.") 'helm-cscope-find-global-definition)
 
 ;; Helm
 (bind-key* (kbd "M-x") 'helm-M-x)
